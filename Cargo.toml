@@ -1,8 +1,13 @@
 [workspace]
 resolver = "2"
 default-members = ["crates/agglayer"]
-members = ["crates/*", "tests/integrations"]
+members = [
+    "crates/*",
+    "crates/agglayer-proofs/sp1",
+    "tests/integrations",
+]
 exclude = [
+    "crates/agglayer-proofs",
     "crates/pessimistic-proof-program",
     "crates/pessimistic-proof-test-suite/aggchain-proof-ecdsa-example/program/",
 ]
@@ -35,7 +40,7 @@ agglayer-rate-limiting = { path = "crates/agglayer-rate-limiting" }
 agglayer-rpc = { path = "crates/agglayer-rpc" }
 agglayer-settlement-service = { path = "crates/agglayer-settlement-service" }
 agglayer-signer = { path = "crates/agglayer-signer" }
-agglayer-sp1 = { path = "crates/agglayer-sp1" }
+agglayer-sp1 = { path = "crates/agglayer-proofs/sp1" }
 agglayer-storage = { path = "crates/agglayer-storage" }
 agglayer-storage-types = { path = "crates/agglayer-storage-types" }
 agglayer-telemetry = { path = "crates/agglayer-telemetry" }

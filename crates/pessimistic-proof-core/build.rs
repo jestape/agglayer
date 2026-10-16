@@ -5,7 +5,7 @@ use toml::Value;
 
 fn main() {
     println!("cargo:rerun-if-changed=Cargo.toml");
-    let cargo_toml_path = Path::new("../pessimistic-proof-program/Cargo.toml");
+    let cargo_toml_path = Path::new("../pessimistic-proof-program/sp1/Cargo.toml");
     println!("cargo:rerun-if-changed={}", cargo_toml_path.display());
     let cargo_toml = fs::read_to_string(cargo_toml_path).expect("Failed to read Cargo.toml");
     let parsed_toml: Value = toml::from_str(&cargo_toml).expect("Failed to parse Cargo.toml");

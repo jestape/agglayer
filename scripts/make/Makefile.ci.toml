@@ -33,12 +33,12 @@ args = ["clippy", "--workspace", "--tests", "--", "-D", "warnings"]
 [tasks.ci-clippy-program]
 extend = "ci-clippy-workspace"
 category = "CI - CHECK - program"
-cwd = "crates/pessimistic-proof-program"
+cwd = "crates/pessimistic-proof-program/sp1"
 args = ["clippy", "--tests", "--", "-D", "warnings"]
 
 [tasks.ci-format-program]
 category = "CI - CHECK - program"
-cwd = "crates/pessimistic-proof-program"
+cwd = "crates/pessimistic-proof-program/sp1"
 command = "cargo"
 toolchain = "nightly"
 args = ["fmt", "--all", "--check"]

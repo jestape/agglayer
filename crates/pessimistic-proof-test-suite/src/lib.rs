@@ -10,7 +10,7 @@ pub mod sample_data;
 pub mod test_vector;
 
 /// The ELF we want to execute inside the zkVM.
-pub const PESSIMISTIC_PROOF_ELF: &[u8] = pessimistic_proof::ELF;
+pub const PESSIMISTIC_PROOF_ELF: &[u8] = pessimistic_proof::sp1::ELF;
 
 /// The Aggchain proof ECDSA ELF example.
 pub const AGGCHAIN_PROOF_ECDSA_ELF: &[u8] =

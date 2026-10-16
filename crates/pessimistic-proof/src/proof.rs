@@ -12,7 +12,7 @@ use sp1_sdk::{
 use sp1_sdk::{SP1Proof, SP1ProofWithPublicValues, SP1PublicValues};
 
 #[cfg(any(test, feature = "testutils"))]
-use crate::ELF;
+use crate::sp1::ELF;
 
 pub trait DisplayToHex {
     fn display_to_hex(&self) -> String;

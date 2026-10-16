@@ -29,7 +29,7 @@ impl AggchainProof {
                 .commitment(IMPORTED_BRIDGE_EXIT_COMMITMENT_VERSION),
         };
 
-        #[cfg(target_os = "zkvm")]
+        #[cfg(all(target_os = "zkvm", feature = "sp1"))]
         {
             // Panic upon invalid proof.
             sp1_zkvm::lib::verify::verify_sp1_proof(

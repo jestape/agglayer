@@ -11,7 +11,7 @@ license = "MIT OR Apache-2.0"
 [workspace]
 
 [dependencies]
-pessimistic-proof-core = { path = "../pessimistic-proof-core", default-features = false }
+pessimistic-proof-core = { path = "../../pessimistic-proof-core", default-features = false, features = ["sp1"] }
 sp1-zkvm = { version = "=6.2.2", features = ["verify"] }
 
 [build-dependencies]
