@@ -8,6 +8,7 @@ license.workspace = true
 testutils = ["dep:arbitrary", "pessimistic-proof-core/testutils"]
 
 [dependencies]
+agglayer-bincode.workspace = true
 agglayer-elf-build.workspace = true
 agglayer-primitives.workspace = true
 agglayer-tries.workspace = true

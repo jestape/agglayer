@@ -234,7 +234,7 @@ version = "0.18.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7cc3d1bdd56fec2f0244e7cb018b02e5c1c6d79748ee62890fdf1a9ce5c5bf5d"
 dependencies = [
- "cargo_metadata",
+ "cargo_metadata 0.18.1",
  "clap",
  "eyre",
  "sp1-build 6.2.2",
@@ -2194,6 +2194,45 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7c02d123df017efcdfbd739ef81735b36c5ba83ec3c59c80a9d7ecc718f92e50"
 
 [[package]]
+name = "asn1-rs"
+version = "0.7.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b7f43a50ac4fdca5df8e885c21b835997f0a1cdee65494a6847694a98652d9d8"
+dependencies = [
+ "asn1-rs-derive",
+ "asn1-rs-impl",
+ "displaydoc",
+ "nom",
+ "num-traits",
+ "rusticata-macros",
+ "thiserror 2.0.18",
+ "time",
+]
+
+[[package]]
+name = "asn1-rs-derive"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3109e49b1e4909e9db6515a30c633684d68cdeaa252f215214cb4fa1a5bfee2c"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.117",
+ "synstructure",
+]
+
+[[package]]
+name = "asn1-rs-impl"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7b18050c2cd6fe86c3a76584ef5e0baf286d038cda203eb6223df2cc413565f7"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.117",
+]
+
+[[package]]
 name = "assert_cmd"
 version = "2.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2856,7 +2895,7 @@ dependencies = [
  "object",
  "rustc-demangle",
  "serde",
- "windows-link",
+ "windows-link 0.2.1",
 ]
 
 [[package]]
@@ -2882,6 +2921,12 @@ name = "base64"
 version = "0.22.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "72b3254f16251a8381aa12e40e3c4d2f0199f8c6508fbecb9d91f575e0fbb8c6"
+
+[[package]]
+name = "base64"
+version = "0.23.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ac07cdecf99051d9a5238b80f35af32cdeba5b336e55d957b318b50137e18da5"
 
 [[package]]
 name = "base64-simd"
@@ -2946,7 +2991,7 @@ dependencies = [
  "quote",
  "regex",
  "rustc-hash 1.1.0",
- "shlex",
+ "shlex 1.3.0",
  "syn 2.0.117",
 ]
 
@@ -2966,7 +3011,7 @@ dependencies = [
  "quote",
  "regex",
  "rustc-hash 2.1.1",
- "shlex",
+ "shlex 1.3.0",
  "syn 2.0.117",
 ]
 
@@ -2976,7 +3021,7 @@ version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "08807e080ed7f9d5433fa9b275196cfc35414f66a0c79d864dc51a0d825231a3"
 dependencies = [
- "bit-vec",
+ "bit-vec 0.8.0",
 ]
 
 [[package]]
@@ -2984,6 +3029,15 @@ name = "bit-vec"
 version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5e764a1d40d510daf35e07be9eb06e75770908c27d411ee6c92109c9840eaaf7"
+
+[[package]]
+name = "bit-vec"
+version = "0.9.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b71798fca2c1fe1086445a7258a4bc81e6e49dcd24c8d0dd9a1e57395b603f51"
+dependencies = [
+ "serde",
+]
 
 [[package]]
 name = "bitcoin-io"
@@ -3265,6 +3319,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "build-probe-mpi"
+version = "0.1.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "abee715b93fb80cbca8602265e0c2acd40b60df81fab1f3fd29a734babd697e7"
+dependencies = [
+ "pkg-config",
+ "shell-words",
+]
+
+[[package]]
 name = "buildstructor"
 version = "0.5.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3384,6 +3448,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "cargo-config2"
+version = "0.1.45"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "855d1b74d8faf6c56e02ddbb8a60f6eae479bba5ee6ee29cddee73fe9484f261"
+dependencies = [
+ "serde",
+ "serde_derive",
+ "toml 1.0.6+spec-1.1.0",
+]
+
+[[package]]
 name = "cargo-platform"
 version = "0.1.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3393,17 +3468,41 @@ dependencies = [
 ]
 
 [[package]]
+name = "cargo-platform"
+version = "0.3.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "dd0061da739915fae12ea00e16397555ed4371a6bb285431aab930f61b0aa4ba"
+dependencies = [
+ "serde",
+ "serde_core",
+]
+
+[[package]]
 name = "cargo_metadata"
 version = "0.18.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2d886547e41f740c616ae73108f6eb70afe6d940c7bc697cb30f13daec073037"
 dependencies = [
  "camino",
- "cargo-platform",
+ "cargo-platform 0.1.9",
  "semver 1.0.27",
  "serde",
  "serde_json",
  "thiserror 1.0.69",
+]
+
+[[package]]
+name = "cargo_metadata"
+version = "0.23.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ef987d17b0a113becdd19d3d0022d04d7ef41f9efe4f3fb63ac44ba61df3ade9"
+dependencies = [
+ "camino",
+ "cargo-platform 0.3.3",
+ "semver 1.0.27",
+ "serde",
+ "serde_json",
+ "thiserror 2.0.18",
 ]
 
 [[package]]
@@ -3433,14 +3532,14 @@ dependencies = [
 
 [[package]]
 name = "cc"
-version = "1.2.57"
+version = "1.2.66"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7a0dd1ca384932ff3641c8718a02769f1698e7563dc6974ffd03346116310423"
+checksum = "f5d6cac793997bd970000024b2934968efe83b382de4fdcf4fcb46b6ee4ad996"
 dependencies = [
  "find-msvc-tools",
  "jobserver",
  "libc",
- "shlex",
+ "shlex 2.0.1",
 ]
 
 [[package]]
@@ -3488,9 +3587,33 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c673075a2e0e5f4a1dde27ce9dee1ea4558c7ffe648f576438a20ca1d2acc4b0"
 dependencies = [
  "iana-time-zone",
+ "js-sys",
  "num-traits",
  "serde",
- "windows-link",
+ "wasm-bindgen",
+ "windows-link 0.2.1",
+]
+
+[[package]]
+name = "chrono-tz"
+version = "0.9.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "93698b29de5e97ad0ae26447b344c482a7284c737d9ddc5f9e52b74a336671bb"
+dependencies = [
+ "chrono",
+ "chrono-tz-build",
+ "phf",
+]
+
+[[package]]
+name = "chrono-tz-build"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0c088aee841df9c3041febbb73934cfc39708749bf96dc827e3359cd39ef11b1"
+dependencies = [
+ "parse-zoneinfo",
+ "phf",
+ "phf_codegen",
 ]
 
 [[package]]
@@ -3675,6 +3798,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1d07550c9036bf2ae0c684c4297d503f838287c83c53686d05370d0e139ae570"
 
 [[package]]
+name = "colored"
+version = "3.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "faf9468729b8cbcea668e36183cb69d317348c2e08e994829fb56ebfdfbaac34"
+dependencies = [
+ "windows-sys 0.61.2",
+]
+
+[[package]]
 name = "combine"
 version = "4.6.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3785,6 +3917,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3d52eff69cd5e647efe296129160853a42795992097e8af39800e1060caeea9b"
 
 [[package]]
+name = "conv"
+version = "0.3.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "78ff10625fd0ac447827aa30ea8b861fead473bb60aeb73af6c1c58caf0d1299"
+dependencies = [
+ "custom_derive",
+]
+
+[[package]]
 name = "convert_case"
 version = "0.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3818,6 +3959,15 @@ name = "core-foundation-sys"
 version = "0.8.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "773648b94d0e5d620f64f280777445740e61fe701025087ec8b57f45c791888b"
+
+[[package]]
+name = "cpp_demangle"
+version = "0.4.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f2bb79cb74d735044c972aae58ed0aaa9a837e85b01106a54c39e42e97f62253"
+dependencies = [
+ "cfg-if",
+]
 
 [[package]]
 name = "cpufeatures"
@@ -4020,6 +4170,27 @@ dependencies = [
 ]
 
 [[package]]
+name = "csv"
+version = "1.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "52cd9d68cf7efc6ddfaaee42e7288d3a99d613d4b50f76ce9827ae0c6e14f938"
+dependencies = [
+ "csv-core",
+ "itoa",
+ "ryu",
+ "serde_core",
+]
+
+[[package]]
+name = "csv-core"
+version = "0.1.13"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "704a3c26996a80471189265814dbc2c257598b96b8a7feae2d31ace646bb9782"
+dependencies = [
+ "memchr",
+]
+
+[[package]]
 name = "ctor"
 version = "0.2.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4048,6 +4219,12 @@ dependencies = [
  "nix",
  "windows-sys 0.61.2",
 ]
+
+[[package]]
+name = "custom_derive"
+version = "0.1.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ef8ae57c4978a2acd8b869ce6b9ca1dfe817bff704c220209fdef2c0b75a01b9"
 
 [[package]]
 name = "darling"
@@ -4218,6 +4395,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d7a1e2f27636f116493b8b860f5546edb47c8d8f8ea73e1d2a20be88e28d1fea"
 
 [[package]]
+name = "debugid"
+version = "0.8.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bef552e6f588e446098f6ba40d89ac146c8c7b64aade83c051ee00bb5d2bc18d"
+dependencies = [
+ "uuid 1.22.0",
+]
+
+[[package]]
 name = "deepsize2"
 version = "0.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4247,6 +4433,20 @@ dependencies = [
  "const-oid 0.9.6",
  "pem-rfc7468",
  "zeroize",
+]
+
+[[package]]
+name = "der-parser"
+version = "10.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "07da5016415d5a3c4dd39b11ed26f915f52fc4e0dc197d87908bc916e51bc1a6"
+dependencies = [
+ "asn1-rs",
+ "displaydoc",
+ "nom",
+ "num-bigint 0.4.6",
+ "num-traits",
+ "rusticata-macros",
 ]
 
 [[package]]
@@ -4365,6 +4565,12 @@ dependencies = [
  "syn 2.0.117",
  "unicode-xid",
 ]
+
+[[package]]
+name = "deunicode"
+version = "1.6.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "abd57806937c9cc163efc8ea3910e00a62e2aeb0b8119f1793a978088f8f6b04"
 
 [[package]]
 name = "diff"
@@ -4682,6 +4888,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "env"
+version = "1.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bc95de49ad098572c02d3fbf368c9a020bfff5ae78483685b77f51d8a7e9486d"
+dependencies = [
+ "num_threads",
+]
+
+[[package]]
 name = "env_filter"
 version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4782,6 +4997,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "fastbloom"
+version = "0.14.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4e7f34442dbe69c60fe8eaf58a8cafff81a1f278816d8ab4db255b3bef4ac3c4"
+dependencies = [
+ "getrandom 0.3.4",
+ "libm",
+ "rand 0.9.3",
+ "siphasher",
+]
+
+[[package]]
 name = "fastrand"
 version = "2.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4850,9 +5077,9 @@ dependencies = [
 
 [[package]]
 name = "find-msvc-tools"
-version = "0.1.9"
+version = "0.1.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5baebc0774151f905a1a2cc41989300b1e6fbb29aff0ceffa1064fdd3088d582"
+checksum = "aedcfb3409746eddb02b9e19ebda1c3394f759a152e48ee875a0844d1b955484"
 
 [[package]]
 name = "fixed-hash"
@@ -5184,6 +5411,30 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0cc23270f6e1808e30a928bdc84dea0b9b4136a8bc82338574f23baf47bbd280"
 
 [[package]]
+name = "globset"
+version = "0.4.19"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e47d37d2ae4464254884b60ab7071be2b876a9c35b696bd018ddcc76847309cd"
+dependencies = [
+ "aho-corasick",
+ "bstr",
+ "log",
+ "regex-automata",
+ "regex-syntax",
+]
+
+[[package]]
+name = "globwalk"
+version = "0.9.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0bf760ebf69878d9fd8f110c89703d90ce35095324d1f1edcb595c63945ee757"
+dependencies = [
+ "bitflags",
+ "ignore",
+ "walkdir",
+]
+
+[[package]]
 name = "gloo-net"
 version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -5350,6 +5601,7 @@ dependencies = [
  "allocator-api2",
  "equivalent",
  "foldhash 0.1.5",
+ "serde",
 ]
 
 [[package]]
@@ -5420,6 +5672,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6c49c37c09c17a53d937dfbb742eb3a961d65a994e6bcdcf37e7399d0cc8ab5e"
 dependencies = [
  "digest 0.10.7",
+]
+
+[[package]]
+name = "home"
+version = "0.5.12"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cc627f471c528ff0c4a49e1d5e60450c8f6461dd6d10ba9dcd3a61d3dff7728d"
+dependencies = [
+ "windows-sys 0.61.2",
 ]
 
 [[package]]
@@ -5494,6 +5755,15 @@ name = "httpdate"
 version = "1.0.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "df3b46402a9d5adb4c86a0cf463f42e19994e3ee891101b1841f30a545cb49a9"
+
+[[package]]
+name = "humansize"
+version = "2.1.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6cb51c9a029ddc91b07a787f1d86b53ccfa49b0e86688c946ebe8d3555685dd7"
+dependencies = [
+ "libm",
+]
 
 [[package]]
 name = "humantime"
@@ -5794,6 +6064,22 @@ dependencies = [
 ]
 
 [[package]]
+name = "ignore"
+version = "0.4.32"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0b17771570a2b94107741a7b033f19132c2eee21d59d21b24d2ced26500bd66e"
+dependencies = [
+ "crossbeam-deque",
+ "globset",
+ "log",
+ "memchr",
+ "regex-automata",
+ "same-file",
+ "walkdir",
+ "winapi-util",
+]
+
+[[package]]
 name = "impl-codec"
 version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -6054,7 +6340,7 @@ dependencies = [
  "simd_cesu8",
  "thiserror 2.0.18",
  "walkdir",
- "windows-link",
+ "windows-link 0.2.1",
 ]
 
 [[package]]
@@ -6313,7 +6599,7 @@ dependencies = [
  "base64 0.22.1",
  "getrandom 0.2.17",
  "js-sys",
- "pem",
+ "pem 3.0.6",
  "serde",
  "serde_json",
  "signature",
@@ -6391,6 +6677,25 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b5b646652bf6661599e1da8901b3b9522896f01e736bad5f723fe7a3a27f899d"
 
 [[package]]
+name = "libffi"
+version = "5.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7a8d526bc07aa02e6826944ec446ecd8d228bd97b1cbd21e5bc5e3407a09a585"
+dependencies = [
+ "libc",
+ "libffi-sys",
+]
+
+[[package]]
+name = "libffi-sys"
+version = "4.2.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "eab801a4ae9065bfea87f37204a7940523e752056e4a090eaaaab9b47fc826b5"
+dependencies = [
+ "cc",
+]
+
+[[package]]
 name = "libgit2-sys"
 version = "0.18.3+1.9.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -6409,7 +6714,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d7c4b02199fee7c5d21a5ae7d8cfa79a6ef5bb2fc834d6e9058e89c825efdc55"
 dependencies = [
  "cfg-if",
- "windows-link",
+ "windows-link 0.2.1",
 ]
 
 [[package]]
@@ -6459,6 +6764,12 @@ name = "linked_list_allocator"
 version = "0.10.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2b23ac50abb8261cb38c6e2a7192d3302e0836dac1628f6a93b82b4fad185897"
+
+[[package]]
+name = "linux-raw-sys"
+version = "0.4.15"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d26c52dbd32dccf2d10cac7725f8eae5296885fb5703b261f7d0a0739ec807ab"
 
 [[package]]
 name = "linux-raw-sys"
@@ -6584,7 +6895,7 @@ version = "0.6.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ad38eb12aea514a0466ea40a80fd8cc83637065948eb4a426e4aa46261175227"
 dependencies = [
- "rustix",
+ "rustix 1.1.4",
 ]
 
 [[package]]
@@ -6672,6 +6983,42 @@ dependencies = [
 ]
 
 [[package]]
+name = "mpi"
+version = "0.8.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "302522157fd9f0ae43eb9792db89932045a29ae57b15a525724c2b3d0981c338"
+dependencies = [
+ "build-probe-mpi",
+ "conv",
+ "libffi",
+ "mpi-sys",
+ "once_cell",
+ "smallvec",
+ "thiserror 2.0.18",
+]
+
+[[package]]
+name = "mpi-sys"
+version = "0.2.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9b828192ea0f41740b6c2a40beaa140c63e8ae51aef58b6edf5d23c0340c4f2b"
+dependencies = [
+ "bindgen 0.72.1",
+ "build-probe-mpi",
+ "cc",
+]
+
+[[package]]
+name = "msvc-demangler"
+version = "0.11.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fbeff6bd154a309b2ada5639b2661ca6ae4599b34e8487dc276d2cd637da2d76"
+dependencies = [
+ "bitflags",
+ "itoa",
+]
+
+[[package]]
 name = "mti"
 version = "1.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -6686,6 +7033,17 @@ name = "multimap"
 version = "0.10.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1d87ecb2933e8aeadb3e3a02b828fed80a7528047e68b4f424523a0981a3a084"
+
+[[package]]
+name = "named-sem"
+version = "0.2.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0875efe1a57a20d0cee7034499aa9d764b3c7525563fa3c3f16a2ccf01ddfa04"
+dependencies = [
+ "libc",
+ "thiserror 2.0.18",
+ "windows 0.61.3",
+]
 
 [[package]]
 name = "native-tls"
@@ -6809,6 +7167,16 @@ dependencies = [
  "proc-macro2",
  "quote",
  "syn 2.0.117",
+]
+
+[[package]]
+name = "num-format"
+version = "0.4.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a652d9771a63711fd3c3deb670acfbe5c30a4072e664d7a3bf5a9e1056ac72c3"
+dependencies = [
+ "arrayvec",
+ "itoa",
 ]
 
 [[package]]
@@ -6958,10 +7326,29 @@ dependencies = [
 ]
 
 [[package]]
+name = "objc2-core-foundation"
+version = "0.3.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2a180dd8642fa45cdb7dd721cd4c11b1cadd4929ce112ebd8b9f5803cc79d536"
+dependencies = [
+ "bitflags",
+]
+
+[[package]]
 name = "objc2-encode"
 version = "4.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ef25abbcd74fb2609453eb695bd2f860d389e457f67dc17cafc8b8cbc89d0c33"
+
+[[package]]
+name = "objc2-io-kit"
+version = "0.3.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "33fafba39597d6dc1fb709123dfa8289d39406734be322956a69f0931c73bb15"
+dependencies = [
+ "libc",
+ "objc2-core-foundation",
+]
 
 [[package]]
 name = "object"
@@ -6975,6 +7362,15 @@ dependencies = [
  "indexmap 2.13.0",
  "memchr",
  "ruzstd",
+]
+
+[[package]]
+name = "oid-registry"
+version = "0.8.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "12f40cff3dde1b6087cc5d5f5d4d65712f34016a03ed60e9c08dcc392736b5b7"
+dependencies = [
+ "asn1-rs",
 ]
 
 [[package]]
@@ -7752,7 +8148,16 @@ dependencies = [
  "libc",
  "redox_syscall",
  "smallvec",
- "windows-link",
+ "windows-link 0.2.1",
+]
+
+[[package]]
+name = "parse-zoneinfo"
+version = "0.3.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1f2a05b18d44e2957b88f96ba460715e295bc1d7510468a2f3d3b44535d26c24"
+dependencies = [
+ "regex",
 ]
 
 [[package]]
@@ -7790,6 +8195,12 @@ name = "paste"
 version = "1.0.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "57c0d7b74b563b49d38dae00a0c37d4d6de9b432382b2892f0574ddcae73fd0a"
+
+[[package]]
+name = "path-clean"
+version = "1.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "17359afc20d7ab31fdb42bb844c8b3bb1dabd7dcf7e68428492da7f16966fcef"
 
 [[package]]
 name = "pathdiff"
@@ -7837,6 +8248,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "pem"
+version = "4.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d354a98a3d1251555de99e8fdd8afda05573c31b82f59063a7b0a29b5527f120"
+dependencies = [
+ "base64 0.23.1",
+ "serde_core",
+]
+
+[[package]]
 name = "pem-rfc7468"
 version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -7855,6 +8276,7 @@ checksum = "9b4f627cb1b25917193a259e49bdad08f671f8d9708acfd5fe0a8c1455d87220"
 name = "pessimistic-proof"
 version = "0.1.0"
 dependencies = [
+ "agglayer-bincode 0.18.0",
  "agglayer-elf-build",
  "agglayer-primitives 0.18.0",
  "agglayer-tries 0.18.0",
@@ -7934,9 +8356,14 @@ dependencies = [
  "sp1-sdk 6.2.2",
  "thiserror 2.0.18",
  "tokio",
+ "toml 1.0.6+spec-1.1.0",
  "tracing",
  "unified-bridge 0.18.0",
  "uuid 1.22.0",
+ "zisk-core",
+ "zisk-sdk",
+ "zisk-transpiler-common",
+ "ziskemu",
 ]
 
 [[package]]
@@ -7993,6 +8420,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "petgraph"
+version = "0.8.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8701b58ea97060d5e5b155d383a69952a60943f0e6dfe30b04c287beb0b27455"
+dependencies = [
+ "fixedbitset",
+ "hashbrown 0.15.5",
+ "indexmap 2.13.0",
+]
+
+[[package]]
 name = "pharos"
 version = "0.5.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -8000,6 +8438,116 @@ checksum = "e9567389417feee6ce15dd6527a8a1ecac205ef62c2932bcf3d9f6fc5b78b414"
 dependencies = [
  "futures",
  "rustc_version 0.4.1",
+]
+
+[[package]]
+name = "phf"
+version = "0.11.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1fd6780a80ae0c52cc120a26a1a42c1ae51b247a253e4e06113d23d2c2edd078"
+dependencies = [
+ "phf_shared",
+]
+
+[[package]]
+name = "phf_codegen"
+version = "0.11.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "aef8048c789fa5e851558d709946d6d79a8ff88c0440c587967f8e94bfb1216a"
+dependencies = [
+ "phf_generator",
+ "phf_shared",
+]
+
+[[package]]
+name = "phf_generator"
+version = "0.11.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3c80231409c20246a13fddb31776fb942c38553c51e871f8cbd687a4cfb5843d"
+dependencies = [
+ "phf_shared",
+ "rand 0.8.6",
+]
+
+[[package]]
+name = "phf_shared"
+version = "0.11.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "67eabc2ef2a60eb7faa00097bd1ffdb5bd28e62bf39990626a582201b7a754e5"
+dependencies = [
+ "siphasher",
+]
+
+[[package]]
+name = "pil2-pilout"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/pil2-proofman.git?branch=pre-develop-1.4.0-alpha#6f8ce9fafa3838c17afe281c165629d3ddff0d32"
+dependencies = [
+ "bytes",
+ "prost 0.13.5",
+ "prost-build 0.13.5",
+ "tracing",
+]
+
+[[package]]
+name = "pil2-stark-recurser"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/pil2-proofman.git?branch=pre-develop-1.4.0-alpha#6f8ce9fafa3838c17afe281c165629d3ddff0d32"
+dependencies = [
+ "anyhow",
+ "num-bigint 0.4.6",
+ "num-traits",
+ "proofman-common",
+ "proofman-fields",
+ "serde",
+ "serde_json",
+ "tera",
+ "tracing",
+]
+
+[[package]]
+name = "pil2-stark-setup"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/pil2-proofman.git?branch=pre-develop-1.4.0-alpha#6f8ce9fafa3838c17afe281c165629d3ddff0d32"
+dependencies = [
+ "anyhow",
+ "clap",
+ "indexmap 2.13.0",
+ "mpi",
+ "pil2-pilout",
+ "pil2-stark-recurser",
+ "proofman-common",
+ "proofman-exps-codegen",
+ "proofman-fields",
+ "proofman-starks-lib-c",
+ "proofman-util",
+ "prost 0.13.5",
+ "rayon",
+ "serde",
+ "serde_json",
+ "tempfile",
+ "tracing",
+ "tracing-subscriber",
+ "which",
+]
+
+[[package]]
+name = "pil2-std-lib"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/pil2-proofman.git?branch=pre-develop-1.4.0-alpha#6f8ce9fafa3838c17afe281c165629d3ddff0d32"
+dependencies = [
+ "colored",
+ "proofman-common",
+ "proofman-fields",
+ "proofman-hints",
+ "proofman-starks-lib-c",
+ "proofman-util",
+ "proofman-witness",
+ "rayon",
+ "rustc-hash 2.1.1",
+ "serde",
+ "serde_json",
+ "tracing",
 ]
 
 [[package]]
@@ -8046,9 +8594,9 @@ dependencies = [
 
 [[package]]
 name = "pkg-config"
-version = "0.3.32"
+version = "0.3.33"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7edddbd0b52d732b21ad9a5fab5c704c14cd949e5e9a1ec5929a24fded1b904c"
+checksum = "19f132c84eca552bf34cab8ec81f1c1dcc229b811638f9d283dceabe58c5569e"
 
 [[package]]
 name = "plotters"
@@ -8266,24 +8814,128 @@ dependencies = [
 ]
 
 [[package]]
+name = "proofman"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/pil2-proofman.git?branch=pre-develop-1.4.0-alpha#6f8ce9fafa3838c17afe281c165629d3ddff0d32"
+dependencies = [
+ "bincode 2.0.1",
+ "blake3",
+ "borsh",
+ "chrono",
+ "colored",
+ "crossbeam-channel",
+ "csv",
+ "libloading",
+ "mpi",
+ "num-traits",
+ "pil2-std-lib",
+ "proofman-common",
+ "proofman-curves",
+ "proofman-fields",
+ "proofman-hints",
+ "proofman-macros",
+ "proofman-starks-lib-c",
+ "proofman-util",
+ "proofman-verifier",
+ "proofman-witness",
+ "rayon",
+ "serde",
+ "serde_json",
+ "tempfile",
+ "tokio-util",
+ "tracing",
+]
+
+[[package]]
+name = "proofman-common"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/pil2-proofman.git?branch=pre-develop-1.4.0-alpha#6f8ce9fafa3838c17afe281c165629d3ddff0d32"
+dependencies = [
+ "borsh",
+ "colored",
+ "crossbeam-channel",
+ "csv",
+ "env",
+ "libc",
+ "libloading",
+ "mpi",
+ "num-bigint 0.4.6",
+ "num_cpus",
+ "proofman-fields",
+ "proofman-macros",
+ "proofman-starks-lib-c",
+ "proofman-util",
+ "rayon",
+ "serde",
+ "serde_json",
+ "sha2 0.10.9",
+ "sysinfo 0.35.2",
+ "thiserror 2.0.18",
+ "tracing",
+ "tracing-subscriber",
+ "yansi",
+]
+
+[[package]]
+name = "proofman-curves"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/pil2-proofman.git?branch=pre-develop-1.4.0-alpha#6f8ce9fafa3838c17afe281c165629d3ddff0d32"
+dependencies = [
+ "proofman-fields",
+]
+
+[[package]]
+name = "proofman-exps-codegen"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/pil2-proofman.git?branch=pre-develop-1.4.0-alpha#6f8ce9fafa3838c17afe281c165629d3ddff0d32"
+dependencies = [
+ "anyhow",
+ "proofman-starks-src",
+ "rayon",
+ "regex",
+ "serde",
+ "serde_json",
+ "tracing",
+]
+
+[[package]]
 name = "proofman-fields"
-version = "1.3.2-alpha"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f5f97afb3a6383aee3ad8e335591564ec4c0904c591536c41fdd5ec5d666a81b"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/pil2-proofman.git?branch=pre-develop-1.4.0-alpha#6f8ce9fafa3838c17afe281c165629d3ddff0d32"
 dependencies = [
  "blake3",
  "cfg-if",
  "num-bigint 0.4.6",
  "paste",
- "proofman-starks-lib-c",
  "serde",
 ]
 
 [[package]]
+name = "proofman-hints"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/pil2-proofman.git?branch=pre-develop-1.4.0-alpha#6f8ce9fafa3838c17afe281c165629d3ddff0d32"
+dependencies = [
+ "itoa",
+ "proofman-common",
+ "proofman-fields",
+ "proofman-starks-lib-c",
+ "tracing",
+]
+
+[[package]]
+name = "proofman-macros"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/pil2-proofman.git?branch=pre-develop-1.4.0-alpha#6f8ce9fafa3838c17afe281c165629d3ddff0d32"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.117",
+]
+
+[[package]]
 name = "proofman-starks-lib-c"
-version = "1.3.2-alpha"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "727e567d696fd28129f87693f51f01c7e1dda6cb4baa4348881262cc7be3285c"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/pil2-proofman.git?branch=pre-develop-1.4.0-alpha#6f8ce9fafa3838c17afe281c165629d3ddff0d32"
 dependencies = [
  "crossbeam-channel",
  "proofman-starks-src",
@@ -8291,19 +8943,39 @@ dependencies = [
 
 [[package]]
 name = "proofman-starks-src"
-version = "1.3.2-alpha"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "824a7f69aeb6ca119fc330533dbf65adc9daad4b7de416f940546cd35a897710"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/pil2-proofman.git?branch=pre-develop-1.4.0-alpha#6f8ce9fafa3838c17afe281c165629d3ddff0d32"
+
+[[package]]
+name = "proofman-util"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/pil2-proofman.git?branch=pre-develop-1.4.0-alpha#6f8ce9fafa3838c17afe281c165629d3ddff0d32"
+dependencies = [
+ "colored",
+ "sysinfo 0.35.2",
+]
 
 [[package]]
 name = "proofman-verifier"
-version = "1.3.2-alpha"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c28c5df32f6465a106d6125ec4ab6a544a739027bd1f668df9a14a92658ce16b"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/pil2-proofman.git?branch=pre-develop-1.4.0-alpha#6f8ce9fafa3838c17afe281c165629d3ddff0d32"
 dependencies = [
+ "bincode 2.0.1",
  "num-traits",
  "proofman-fields",
+ "rayon",
  "serde",
+ "tracing",
+]
+
+[[package]]
+name = "proofman-witness"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/pil2-proofman.git?branch=pre-develop-1.4.0-alpha#6f8ce9fafa3838c17afe281c165629d3ddff0d32"
+dependencies = [
+ "libloading",
+ "proofman-common",
+ "proofman-fields",
 ]
 
 [[package]]
@@ -8313,7 +8985,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "37566cb3fdacef14c0737f9546df7cfeadbfbc9fef10991038bf5015d0c80532"
 dependencies = [
  "bit-set",
- "bit-vec",
+ "bit-vec 0.8.0",
  "bitflags",
  "num-traits",
  "rand 0.9.3",
@@ -8367,10 +9039,31 @@ dependencies = [
  "log",
  "multimap",
  "once_cell",
- "petgraph",
+ "petgraph 0.7.1",
  "prettyplease",
  "prost 0.13.5",
  "prost-types 0.13.5",
+ "regex",
+ "syn 2.0.117",
+ "tempfile",
+]
+
+[[package]]
+name = "prost-build"
+version = "0.14.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "343d3bd7056eda839b03204e68deff7d1b13aba7af2b2fd16890697274262ee7"
+dependencies = [
+ "heck 0.4.1",
+ "itertools 0.14.0",
+ "log",
+ "multimap",
+ "petgraph 0.8.3",
+ "prettyplease",
+ "prost 0.14.3",
+ "prost-types 0.14.3",
+ "pulldown-cmark",
+ "pulldown-cmark-to-cmark",
  "regex",
  "syn 2.0.117",
  "tempfile",
@@ -8537,6 +9230,26 @@ dependencies = [
 ]
 
 [[package]]
+name = "pulldown-cmark"
+version = "0.13.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e9f068eba8e7071c5f9511831b44f32c740d5adf574e990f946ddb53db2f314e"
+dependencies = [
+ "bitflags",
+ "memchr",
+ "unicase",
+]
+
+[[package]]
+name = "pulldown-cmark-to-cmark"
+version = "22.0.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "84bbb29c624230c4bd1047bbdb2aa47e41c860e9665ce62ba9504eebe91bf867"
+dependencies = [
+ "pulldown-cmark",
+]
+
+[[package]]
 name = "quick-error"
 version = "1.2.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -8570,6 +9283,7 @@ checksum = "4fcb935c5bec503c2f0e306bdd3e58bb9029dcb14fa8d9ac76e3a5256ac0763e"
 dependencies = [
  "aws-lc-rs",
  "bytes",
+ "fastbloom",
  "getrandom 0.3.4",
  "lru-slab",
  "rand 0.9.3",
@@ -8577,6 +9291,7 @@ dependencies = [
  "rustc-hash 2.1.1",
  "rustls 0.23.45",
  "rustls-pki-types",
+ "rustls-platform-verifier 0.6.2",
  "slab",
  "thiserror 2.0.18",
  "tinyvec",
@@ -8770,6 +9485,20 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3f87cc11a0140b4b0da0ffc889885760c61b13672d80a908920b2c0df078fa14"
 dependencies = [
  "rayon",
+]
+
+[[package]]
+name = "rcgen"
+version = "0.14.10"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8774e05a7d0de114588e6a28fe7e71694b82614ed569d86d8b389dfbc98b8ad8"
+dependencies = [
+ "pem 4.0.0",
+ "ring",
+ "rustls-pki-types",
+ "time",
+ "x509-parser",
+ "yasna",
 ]
 
 [[package]]
@@ -9189,6 +9918,41 @@ dependencies = [
 ]
 
 [[package]]
+name = "rustfmt-wrapper"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f1adc9dfed5cc999077978cc7163b9282c5751c8d39827c4ea8c8c220ca5a440"
+dependencies = [
+ "serde",
+ "tempfile",
+ "thiserror 1.0.69",
+ "toml 0.8.23",
+ "toolchain_find",
+]
+
+[[package]]
+name = "rusticata-macros"
+version = "4.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "faf0c4a6ece9950b9abdb62b1cfcf2a68b3b67a10ba445b3bb85be2a293d0632"
+dependencies = [
+ "nom",
+]
+
+[[package]]
+name = "rustix"
+version = "0.38.44"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fdb5bc1ae2baa591800df16c9ca78619bf65c0488b41b96ccec5d11220d8c154"
+dependencies = [
+ "bitflags",
+ "errno",
+ "libc",
+ "linux-raw-sys 0.4.15",
+ "windows-sys 0.59.0",
+]
+
+[[package]]
 name = "rustix"
 version = "1.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -9197,7 +9961,7 @@ dependencies = [
  "bitflags",
  "errno",
  "libc",
- "linux-raw-sys",
+ "linux-raw-sys 0.12.1",
  "windows-sys 0.61.2",
 ]
 
@@ -9279,6 +10043,27 @@ dependencies = [
  "security-framework-sys",
  "webpki-root-certs 0.26.11",
  "windows-sys 0.59.0",
+]
+
+[[package]]
+name = "rustls-platform-verifier"
+version = "0.6.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1d99feebc72bae7ab76ba994bb5e121b8d83d910ca40b36e0921f53becc41784"
+dependencies = [
+ "core-foundation 0.10.1",
+ "core-foundation-sys",
+ "jni 0.21.1",
+ "log",
+ "once_cell",
+ "rustls 0.23.45",
+ "rustls-native-certs",
+ "rustls-platform-verifier-android",
+ "rustls-webpki 0.103.15",
+ "security-framework",
+ "security-framework-sys",
+ "webpki-root-certs 1.0.6",
+ "windows-sys 0.61.2",
 ]
 
 [[package]]
@@ -9670,6 +10455,7 @@ version = "1.0.149"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "83fc039473c5595ace860d8c4fafa220ff474b3fc6bfdb4293327f1a37e94d86"
 dependencies = [
+ "indexmap 2.13.0",
  "itoa",
  "memchr",
  "serde",
@@ -9854,10 +10640,22 @@ dependencies = [
 ]
 
 [[package]]
+name = "shell-words"
+version = "1.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "dc6fe69c597f9c37bfeeeeeb33da3530379845f10be461a66d16d03eca2ded77"
+
+[[package]]
 name = "shlex"
 version = "1.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0fda2ff0d084019ba4d7c6f371c95d8fd75ce3524c3cb8fb653a3023f6323e64"
+
+[[package]]
+name = "shlex"
+version = "2.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f8fadd59c855ef2080decdef8ff161eb6661b86933c9d82e5ba29dc602a55aba"
 
 [[package]]
 name = "signal-hook-registry"
@@ -9918,6 +10716,12 @@ dependencies = [
  "thiserror 2.0.18",
  "time",
 ]
+
+[[package]]
+name = "siphasher"
+version = "1.0.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "33f4fe9184a62d842c9ef383018f3306d8ba224fd9d836f56d7288308847c256"
 
 [[package]]
 name = "size"
@@ -10366,10 +11170,20 @@ dependencies = [
 ]
 
 [[package]]
-name = "smallvec"
-version = "1.15.1"
+name = "slug"
+version = "0.1.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "67b1b7a3b5fe4f1376887184045fcf45c69e92af734b7aaddc05fb777b6fbd03"
+checksum = "882a80f72ee45de3cc9a5afeb2da0331d58df69e4e7d8eeb5d3c7784ae67e724"
+dependencies = [
+ "deunicode",
+ "wasm-bindgen",
+]
+
+[[package]]
+name = "smallvec"
+version = "1.15.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8ed6a63f02c8539c91a8685a86f4099661ba3da017932f6ebbea6de3f0fa7c90"
 dependencies = [
  "serde",
 ]
@@ -10427,7 +11241,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c6c620b00f468a4eeb6050d5641d971b35aa623d2142ecb55d02fd64840c5f02"
 dependencies = [
  "anyhow",
- "cargo_metadata",
+ "cargo_metadata 0.18.1",
  "chrono",
  "clap",
  "dirs 5.0.1",
@@ -10441,7 +11255,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "69df543394c6d587b0f04a281606a94721d4ea9532866204126a5c0a3a12a45c"
 dependencies = [
  "anyhow",
- "cargo_metadata",
+ "cargo_metadata 0.18.1",
  "chrono",
  "clap",
  "dirs 5.0.1",
@@ -10536,7 +11350,7 @@ checksum = "14d0e9425daa3f50fcfa9b434e6030b64b3dfacaed3d97fd47314e5ddd851603"
 dependencies = [
  "base64 0.22.1",
  "bincode 1.3.3",
- "cargo_metadata",
+ "cargo_metadata 0.18.1",
  "hashbrown 0.14.5",
  "hex",
  "libc",
@@ -10545,7 +11359,7 @@ dependencies = [
  "sp1-core-executor-runner-binary",
  "sp1-jit",
  "sp1-primitives 6.2.2",
- "sysinfo",
+ "sysinfo 0.30.13",
  "tracing",
  "uuid 1.22.0",
 ]
@@ -10660,7 +11474,7 @@ dependencies = [
  "static_assertions",
  "struct-reflection",
  "strum 0.27.2",
- "sysinfo",
+ "sysinfo 0.30.13",
  "tempfile",
  "thiserror 1.0.69",
  "tokio",
@@ -10984,7 +11798,7 @@ dependencies = [
  "sp1-recursion-machine",
  "sp1-verifier 6.2.2",
  "static_assertions",
- "sysinfo",
+ "sysinfo 0.30.13",
  "tempfile",
  "thiserror 1.0.69",
  "tokio",
@@ -11014,7 +11828,7 @@ dependencies = [
  "sp1-primitives 6.2.2",
  "tokio",
  "tonic 0.12.3",
- "tonic-build",
+ "tonic-build 0.12.3",
  "tracing",
 ]
 
@@ -11329,7 +12143,7 @@ dependencies = [
  "sp1-stark",
  "strum 0.26.3",
  "strum_macros 0.26.4",
- "sysinfo",
+ "sysinfo 0.30.13",
  "tempfile",
  "thiserror 1.0.69",
  "tokio",
@@ -11419,7 +12233,7 @@ dependencies = [
  "sp1-derive 5.2.4",
  "sp1-primitives 5.2.4",
  "strum 0.26.3",
- "sysinfo",
+ "sysinfo 0.30.13",
  "tracing",
 ]
 
@@ -11689,6 +12503,31 @@ dependencies = [
 ]
 
 [[package]]
+name = "symbolic-common"
+version = "12.18.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "332615d90111d8eeaf86a84dc9bbe9f65d0d8c5cf11b4caccedc37754eb0dcfd"
+dependencies = [
+ "debugid",
+ "memmap2",
+ "stable_deref_trait",
+ "uuid 1.22.0",
+]
+
+[[package]]
+name = "symbolic-demangle"
+version = "12.18.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "912017718eb4d21930546245af9a3475c9dccf15675a5c215664e76621afc471"
+dependencies = [
+ "cc",
+ "cpp_demangle",
+ "msvc-demangler",
+ "rustc-demangle",
+ "symbolic-common",
+]
+
+[[package]]
 name = "syn"
 version = "1.0.109"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -11765,7 +12604,35 @@ dependencies = [
  "ntapi",
  "once_cell",
  "rayon",
- "windows",
+ "windows 0.52.0",
+]
+
+[[package]]
+name = "sysinfo"
+version = "0.35.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3c3ffa3e4ff2b324a57f7aeb3c349656c7b127c3c189520251a648102a92496e"
+dependencies = [
+ "libc",
+ "memchr",
+ "ntapi",
+ "objc2-core-foundation",
+ "objc2-io-kit",
+ "windows 0.61.3",
+]
+
+[[package]]
+name = "sysinfo"
+version = "0.38.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "92ab6a2f8bfe508deb3c6406578252e491d299cbbf3bc0529ecc3313aee4a52f"
+dependencies = [
+ "libc",
+ "memchr",
+ "ntapi",
+ "objc2-core-foundation",
+ "objc2-io-kit",
+ "windows 0.62.2",
 ]
 
 [[package]]
@@ -11804,8 +12671,30 @@ dependencies = [
  "fastrand",
  "getrandom 0.4.2",
  "once_cell",
- "rustix",
+ "rustix 1.1.4",
  "windows-sys 0.61.2",
+]
+
+[[package]]
+name = "tera"
+version = "1.20.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e8004bca281f2d32df3bacd59bc67b312cb4c70cea46cbd79dbe8ac5ed206722"
+dependencies = [
+ "chrono",
+ "chrono-tz",
+ "globwalk",
+ "humansize",
+ "lazy_static",
+ "percent-encoding",
+ "pest",
+ "pest_derive",
+ "rand 0.8.6",
+ "regex",
+ "serde",
+ "serde_json",
+ "slug",
+ "unicode-segmentation",
 ]
 
 [[package]]
@@ -11898,6 +12787,26 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d050e60b33d41c19108b32cea32164033a9013fe3b46cbd4457559bfbf77afaa"
 dependencies = [
  "num_cpus",
+]
+
+[[package]]
+name = "tikv-jemalloc-sys"
+version = "0.6.1+5.3.0-1-ge13ca993e8ccb9ba9847cc330696e02839f328f7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cd8aa5b2ab86a2cefa406d889139c162cbb230092f7d1d7cbc1716405d852a3b"
+dependencies = [
+ "cc",
+ "libc",
+]
+
+[[package]]
+name = "tikv-jemallocator"
+version = "0.6.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0359b4327f954e0567e69fb191cf1436617748813819c94b8cd4a431422d053a"
+dependencies = [
+ "libc",
+ "tikv-jemalloc-sys",
 ]
 
 [[package]]
@@ -12296,8 +13205,20 @@ checksum = "9557ce109ea773b399c9b9e5dca39294110b74f1f342cb347a80d1fce8c26a11"
 dependencies = [
  "prettyplease",
  "proc-macro2",
- "prost-build",
+ "prost-build 0.13.5",
  "prost-types 0.13.5",
+ "quote",
+ "syn 2.0.117",
+]
+
+[[package]]
+name = "tonic-build"
+version = "0.14.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c68f61875ac5293cf72e6c8cf0158086428c82c37229e98c840878f1706b0322"
+dependencies = [
+ "prettyplease",
+ "proc-macro2",
  "quote",
  "syn 2.0.117",
 ]
@@ -12326,6 +13247,22 @@ dependencies = [
 ]
 
 [[package]]
+name = "tonic-prost-build"
+version = "0.14.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "654e5643eff75d7f8c99197ce1440ed19a3474eada74c12bbac488b2cafdae27"
+dependencies = [
+ "prettyplease",
+ "proc-macro2",
+ "prost-build 0.14.3",
+ "prost-types 0.14.3",
+ "quote",
+ "syn 2.0.117",
+ "tempfile",
+ "tonic-build 0.14.6",
+]
+
+[[package]]
 name = "tonic-reflection"
 version = "0.13.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -12347,6 +13284,19 @@ dependencies = [
  "prost 0.13.5",
  "prost-types 0.13.5",
  "tonic 0.13.1",
+]
+
+[[package]]
+name = "toolchain_find"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ebc8c9a7f0a2966e1acdaf0461023d0b01471eeead645370cf4c3f5cff153f2a"
+dependencies = [
+ "home",
+ "once_cell",
+ "regex",
+ "semver 1.0.27",
+ "walkdir",
 ]
 
 [[package]]
@@ -12846,6 +13796,7 @@ dependencies = [
  "js-sys",
  "md-5",
  "rand 0.10.1",
+ "serde_core",
  "sha1_smol",
  "wasm-bindgen",
 ]
@@ -13100,6 +14051,7 @@ dependencies = [
  "hashbrown 0.15.5",
  "indexmap 2.13.0",
  "semver 1.0.27",
+ "serde",
 ]
 
 [[package]]
@@ -13173,6 +14125,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "which"
+version = "6.0.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b4ee928febd44d98f2f459a4a79bd4d928591333a494a10a868418ac1b39cf1f"
+dependencies = [
+ "either",
+ "home",
+ "rustix 0.38.44",
+ "winsafe",
+]
+
+[[package]]
 name = "widestring"
 version = "1.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -13220,6 +14184,49 @@ dependencies = [
 ]
 
 [[package]]
+name = "windows"
+version = "0.61.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9babd3a767a4c1aef6900409f85f5d53ce2544ccdfaa86dad48c91782c6d6893"
+dependencies = [
+ "windows-collections 0.2.0",
+ "windows-core 0.61.2",
+ "windows-future 0.2.1",
+ "windows-link 0.1.3",
+ "windows-numerics 0.2.0",
+]
+
+[[package]]
+name = "windows"
+version = "0.62.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "527fadee13e0c05939a6a05d5bd6eec6cd2e3dbd648b9f8e447c6518133d8580"
+dependencies = [
+ "windows-collections 0.3.2",
+ "windows-core 0.62.2",
+ "windows-future 0.3.2",
+ "windows-numerics 0.3.1",
+]
+
+[[package]]
+name = "windows-collections"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3beeceb5e5cfd9eb1d76b381630e82c4241ccd0d27f1a39ed41b2760b255c5e8"
+dependencies = [
+ "windows-core 0.61.2",
+]
+
+[[package]]
+name = "windows-collections"
+version = "0.3.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "23b2d95af1a8a14a3c7367e1ed4fc9c20e0a26e79551b1454d72583c97cc6610"
+dependencies = [
+ "windows-core 0.62.2",
+]
+
+[[package]]
 name = "windows-core"
 version = "0.52.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -13230,15 +14237,50 @@ dependencies = [
 
 [[package]]
 name = "windows-core"
+version = "0.61.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c0fdd3ddb90610c7638aa2b3a3ab2904fb9e5cdbecc643ddb3647212781c4ae3"
+dependencies = [
+ "windows-implement",
+ "windows-interface",
+ "windows-link 0.1.3",
+ "windows-result 0.3.4",
+ "windows-strings 0.4.2",
+]
+
+[[package]]
+name = "windows-core"
 version = "0.62.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b8e83a14d34d0623b51dce9581199302a221863196a1dde71a7663a4c2be9deb"
 dependencies = [
  "windows-implement",
  "windows-interface",
- "windows-link",
- "windows-result",
- "windows-strings",
+ "windows-link 0.2.1",
+ "windows-result 0.4.1",
+ "windows-strings 0.5.1",
+]
+
+[[package]]
+name = "windows-future"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fc6a41e98427b19fe4b73c550f060b59fa592d7d686537eebf9385621bfbad8e"
+dependencies = [
+ "windows-core 0.61.2",
+ "windows-link 0.1.3",
+ "windows-threading 0.1.0",
+]
+
+[[package]]
+name = "windows-future"
+version = "0.3.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e1d6f90251fe18a279739e78025bd6ddc52a7e22f921070ccdc67dde84c605cb"
+dependencies = [
+ "windows-core 0.62.2",
+ "windows-link 0.2.1",
+ "windows-threading 0.2.1",
 ]
 
 [[package]]
@@ -13265,9 +14307,35 @@ dependencies = [
 
 [[package]]
 name = "windows-link"
+version = "0.1.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5e6ad25900d524eaabdbbb96d20b4311e1e7ae1699af4fb28c17ae66c80d798a"
+
+[[package]]
+name = "windows-link"
 version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f0805222e57f7521d6a62e36fa9163bc891acd422f971defe97d64e70d0a4fe5"
+
+[[package]]
+name = "windows-numerics"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9150af68066c4c5c07ddc0ce30421554771e528bde427614c61038bc2c92c2b1"
+dependencies = [
+ "windows-core 0.61.2",
+ "windows-link 0.1.3",
+]
+
+[[package]]
+name = "windows-numerics"
+version = "0.3.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6e2e40844ac143cdb44aead537bbf727de9b044e107a0f1220392177d15b0f26"
+dependencies = [
+ "windows-core 0.62.2",
+ "windows-link 0.2.1",
+]
 
 [[package]]
 name = "windows-registry"
@@ -13275,9 +14343,18 @@ version = "0.6.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "02752bf7fbdcce7f2a27a742f798510f3e5ad88dbe84871e5168e2120c3d5720"
 dependencies = [
- "windows-link",
- "windows-result",
- "windows-strings",
+ "windows-link 0.2.1",
+ "windows-result 0.4.1",
+ "windows-strings 0.5.1",
+]
+
+[[package]]
+name = "windows-result"
+version = "0.3.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "56f42bd332cc6c8eac5af113fc0c1fd6a8fd2aa08a0119358686e5160d0586c6"
+dependencies = [
+ "windows-link 0.1.3",
 ]
 
 [[package]]
@@ -13286,7 +14363,16 @@ version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7781fa89eaf60850ac3d2da7af8e5242a5ea78d1a11c49bf2910bb5a73853eb5"
 dependencies = [
- "windows-link",
+ "windows-link 0.2.1",
+]
+
+[[package]]
+name = "windows-strings"
+version = "0.4.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "56e6c93f3a0c3b36176cb1327a4958a0353d5d166c2a35cb268ace15e91d3b57"
+dependencies = [
+ "windows-link 0.1.3",
 ]
 
 [[package]]
@@ -13295,7 +14381,7 @@ version = "0.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7837d08f69c77cf6b07689544538e017c1bfcf57e34b4c0ff58e6c2cd3b37091"
 dependencies = [
- "windows-link",
+ "windows-link 0.2.1",
 ]
 
 [[package]]
@@ -13340,7 +14426,7 @@ version = "0.61.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ae137229bcbd6cdf0f7b80a31df61766145077ddf49416a728b02cb3921ff3fc"
 dependencies = [
- "windows-link",
+ "windows-link 0.2.1",
 ]
 
 [[package]]
@@ -13387,6 +14473,24 @@ dependencies = [
  "windows_x86_64_gnu 0.52.6",
  "windows_x86_64_gnullvm 0.52.6",
  "windows_x86_64_msvc 0.52.6",
+]
+
+[[package]]
+name = "windows-threading"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b66463ad2e0ea3bbf808b7f1d371311c80e115c0b71d60efc142cafbcfb057a6"
+dependencies = [
+ "windows-link 0.1.3",
+]
+
+[[package]]
+name = "windows-threading"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3949bd5b99cafdf1c7ca86b43ca564028dfe27d66958f2470940f73d86d75b37"
+dependencies = [
+ "windows-link 0.2.1",
 ]
 
 [[package]]
@@ -13540,6 +14644,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "winsafe"
+version = "0.0.19"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d135d17ab770252ad95e9a872d365cf3090e3be864a34ab46f48555993efc904"
+
+[[package]]
 name = "wit-bindgen"
 version = "0.51.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -13662,6 +14772,24 @@ dependencies = [
 ]
 
 [[package]]
+name = "x509-parser"
+version = "0.18.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d43b0f71ce057da06bc0851b23ee24f3f86190b07203dd8f567d0b706a185202"
+dependencies = [
+ "asn1-rs",
+ "data-encoding",
+ "der-parser",
+ "lazy_static",
+ "nom",
+ "oid-registry",
+ "ring",
+ "rusticata-macros",
+ "thiserror 2.0.18",
+ "time",
+]
+
+[[package]]
 name = "xmlparser"
 version = "0.13.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -13672,6 +14800,16 @@ name = "yansi"
 version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cfe53a6657fd280eaa890a3bc59152892ffa3e30101319d168b781ed6529b049"
+
+[[package]]
+name = "yasna"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b5f6765e852b9b4dc8e2a76843e4d64d1cea8e79bcde0b6901aea8e7c7f08282"
+dependencies = [
+ "bit-vec 0.9.1",
+ "time",
+]
 
 [[package]]
 name = "yoke"
@@ -13791,28 +14929,390 @@ dependencies = [
 ]
 
 [[package]]
+name = "zisk-asm"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "zisk-core",
+]
+
+[[package]]
+name = "zisk-asm-runner"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "anyhow",
+ "libc",
+ "named-sem",
+ "proofman-starks-lib-c",
+ "proofman-util",
+ "rayon",
+ "thiserror 2.0.18",
+ "tracing",
+ "zisk-common",
+ "zisk-core",
+ "zisk-sm-mem-common",
+ "zisk-sm-mem-planner",
+]
+
+[[package]]
+name = "zisk-build"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "anyhow",
+ "blake3",
+ "cargo-config2",
+ "cargo_metadata 0.23.1",
+ "clap",
+ "serde",
+ "tempfile",
+ "toml 0.8.23",
+ "vergen-git2",
+ "zisk-rom-setup",
+]
+
+[[package]]
 name = "zisk-circuit"
-version = "1.3.2-alpha"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "42e4d1502e50e58c2b147f0c3952626ee593f256b10300e6a5f6dd94a344d5ca"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+
+[[package]]
+name = "zisk-cluster-common"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "anyhow",
+ "borsh",
+ "bytes",
+ "chrono",
+ "proofman",
+ "proofman-common",
+ "serde",
+ "tracing",
+ "tracing-appender",
+ "tracing-subscriber",
+ "uuid 1.22.0",
+ "zisk-common",
+]
+
+[[package]]
+name = "zisk-common"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "alloy-sol-types",
+ "bincode 2.0.1",
+ "clap",
+ "crossbeam-queue",
+ "dirs 6.0.0",
+ "num-bigint 0.4.6",
+ "paste",
+ "proofman",
+ "proofman-common",
+ "proofman-fields",
+ "proofman-verifier",
+ "serde",
+ "serde_json",
+ "sha2 0.10.9",
+ "thiserror 2.0.18",
+ "tikv-jemallocator",
+ "tracing",
+ "zisk-core",
+ "zisk-definitions",
+ "zisk-pil",
+ "zisk-stream",
+ "zisk-verifier",
+]
+
+[[package]]
+name = "zisk-coordinator-api"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "anyhow",
+ "chrono",
+ "prost 0.14.3",
+ "prost-types 0.14.3",
+ "tonic 0.14.6",
+ "tonic-prost",
+ "tonic-prost-build",
+ "uuid 1.22.0",
+ "zisk-common",
+]
+
+[[package]]
+name = "zisk-coordinator-client"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "anyhow",
+ "bytes",
+ "futures",
+ "tokio",
+ "tokio-stream",
+ "tonic 0.14.6",
+ "uuid 1.22.0",
+ "zisk-common",
+ "zisk-coordinator-api",
+]
+
+[[package]]
+name = "zisk-core"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "elf",
+ "paste",
+ "proofman-fields",
+ "rayon",
+ "sha2 0.10.9",
+ "tiny-keccak",
+ "zisk-definitions",
+ "zisk-precomp-helpers",
+ "ziskos",
+]
+
+[[package]]
+name = "zisk-cuda-build"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
 
 [[package]]
 name = "zisk-definitions"
-version = "1.3.2-alpha"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0ea4b2d4e147c2cc6fcce71db51c9938404b2dde4db0f0412fa554aac77a0c96"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+
+[[package]]
+name = "zisk-executor"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "anyhow",
+ "arc-swap",
+ "crossbeam",
+ "named-sem",
+ "paste",
+ "pil2-std-lib",
+ "proofman",
+ "proofman-common",
+ "proofman-fields",
+ "proofman-util",
+ "proofman-witness",
+ "rayon",
+ "thiserror 2.0.18",
+ "tracing",
+ "zisk-asm-runner",
+ "zisk-common",
+ "zisk-core",
+ "zisk-pil",
+ "zisk-precomp-arith-eq",
+ "zisk-precomp-arith-eq-384",
+ "zisk-precomp-big-int",
+ "zisk-precomp-blake2",
+ "zisk-precomp-blake3",
+ "zisk-precomp-common",
+ "zisk-precomp-dma",
+ "zisk-precomp-evm",
+ "zisk-precomp-hints",
+ "zisk-precomp-keccakf",
+ "zisk-precomp-poseidon",
+ "zisk-precomp-sha256f",
+ "zisk-precomp-twisted-edwards",
+ "zisk-sm-arith",
+ "zisk-sm-binary",
+ "zisk-sm-main",
+ "zisk-sm-mem",
+ "zisk-sm-mem-common",
+ "zisk-sm-rom",
+ "ziskemu",
+]
+
+[[package]]
+name = "zisk-gpu-witness"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "paste",
+]
 
 [[package]]
 name = "zisk-lib-c"
-version = "1.3.2-alpha"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "80e05059b14e147657843734baea28a453d933bcfeb304d8f859bb31e0e435b5"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+
+[[package]]
+name = "zisk-pil"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "proofman-common",
+ "proofman-fields",
+ "proofman-macros",
+ "serde",
+ "serde_arrays",
+]
+
+[[package]]
+name = "zisk-precomp-arith-eq"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "ark-bn254",
+ "ark-ff 0.5.0",
+ "ark-secp256k1",
+ "ark-secp256r1",
+ "ark-std 0.5.0",
+ "lazy_static",
+ "num-bigint 0.4.6",
+ "num-traits",
+ "path-clean",
+ "pil2-std-lib",
+ "proofman-common",
+ "proofman-fields",
+ "proofman-util",
+ "rayon",
+ "regex",
+ "rustfmt-wrapper",
+ "tracing",
+ "zisk-common",
+ "zisk-core",
+ "zisk-lib-c",
+ "zisk-pil",
+ "zisk-precomp-common",
+ "zisk-precomp-helpers",
+]
+
+[[package]]
+name = "zisk-precomp-arith-eq-384"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "ark-bls12-381",
+ "ark-ff 0.5.0",
+ "lazy_static",
+ "num-bigint 0.4.6",
+ "num-traits",
+ "path-clean",
+ "pil2-std-lib",
+ "proofman-common",
+ "proofman-fields",
+ "proofman-util",
+ "rayon",
+ "rustfmt-wrapper",
+ "tracing",
+ "zisk-common",
+ "zisk-core",
+ "zisk-pil",
+ "zisk-precomp-arith-eq",
+ "zisk-precomp-common",
+ "zisk-precomp-helpers",
+]
+
+[[package]]
+name = "zisk-precomp-big-int"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "pil2-std-lib",
+ "proofman-common",
+ "proofman-fields",
+ "proofman-util",
+ "rayon",
+ "tracing",
+ "zisk-common",
+ "zisk-core",
+ "zisk-lib-c",
+ "zisk-pil",
+ "zisk-precomp-common",
+]
+
+[[package]]
+name = "zisk-precomp-blake2"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "pil2-std-lib",
+ "proofman-common",
+ "proofman-fields",
+ "proofman-util",
+ "rayon",
+ "tracing",
+ "zisk-common",
+ "zisk-core",
+ "zisk-pil",
+ "zisk-precomp-common",
+]
+
+[[package]]
+name = "zisk-precomp-blake3"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "pil2-std-lib",
+ "proofman-common",
+ "proofman-fields",
+ "proofman-util",
+ "rayon",
+ "tracing",
+ "zisk-common",
+ "zisk-core",
+ "zisk-pil",
+ "zisk-precomp-common",
+]
+
+[[package]]
+name = "zisk-precomp-common"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "pil2-std-lib",
+ "proofman-fields",
+ "rayon",
+ "zisk-common",
+ "zisk-core",
+ "zisk-sm-mem",
+ "zisk-sm-mem-common",
+]
+
+[[package]]
+name = "zisk-precomp-dma"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "pil2-std-lib",
+ "proofman-common",
+ "proofman-fields",
+ "proofman-util",
+ "rayon",
+ "tracing",
+ "zisk-common",
+ "zisk-core",
+ "zisk-pil",
+ "zisk-precomp-common",
+ "zisk-precomp-helpers",
+]
+
+[[package]]
+name = "zisk-precomp-evm"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "clap",
+ "pil2-std-lib",
+ "proofman-common",
+ "proofman-fields",
+ "zisk-common",
+ "zisk-core",
+ "zisk-pil",
+ "zisk-precomp-common",
+ "zisk-precomp-helpers",
+]
 
 [[package]]
 name = "zisk-precomp-helpers"
-version = "1.3.2-alpha"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "46e774e82c7777f62d1307e45a1a45712340bce358ee5541d2a709a46fa1c989"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
 dependencies = [
  "ark-bls12-381",
  "ark-bn254",
@@ -13828,21 +15328,395 @@ dependencies = [
 ]
 
 [[package]]
+name = "zisk-precomp-hints"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "anyhow",
+ "borsh",
+ "rayon",
+ "rustls 0.23.45",
+ "tracing",
+ "zisk-cluster-common",
+ "zisk-common",
+ "ziskos-hints",
+]
+
+[[package]]
+name = "zisk-precomp-keccakf"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "pil2-std-lib",
+ "proofman-common",
+ "proofman-fields",
+ "proofman-util",
+ "rayon",
+ "tiny-keccak",
+ "tracing",
+ "zisk-common",
+ "zisk-core",
+ "zisk-cuda-build",
+ "zisk-gpu-witness",
+ "zisk-pil",
+ "zisk-precomp-common",
+ "zisk-precomp-helpers",
+]
+
+[[package]]
+name = "zisk-precomp-poseidon"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "pil2-std-lib",
+ "proofman-common",
+ "proofman-fields",
+ "proofman-util",
+ "rayon",
+ "tracing",
+ "zisk-common",
+ "zisk-core",
+ "zisk-pil",
+ "zisk-precomp-common",
+]
+
+[[package]]
+name = "zisk-precomp-sha256f"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "pil2-std-lib",
+ "proofman-common",
+ "proofman-fields",
+ "proofman-util",
+ "rayon",
+ "tracing",
+ "zisk-common",
+ "zisk-core",
+ "zisk-pil",
+ "zisk-precomp-common",
+]
+
+[[package]]
+name = "zisk-precomp-twisted-edwards"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "ark-bn254",
+ "ark-ff 0.5.0",
+ "ark-std 0.5.0",
+ "lazy_static",
+ "num-bigint 0.4.6",
+ "num-traits",
+ "path-clean",
+ "pil2-std-lib",
+ "proofman-common",
+ "proofman-fields",
+ "proofman-util",
+ "rayon",
+ "tracing",
+ "zisk-common",
+ "zisk-core",
+ "zisk-pil",
+ "zisk-precomp-arith-eq",
+ "zisk-precomp-common",
+ "zisk-precomp-helpers",
+]
+
+[[package]]
+name = "zisk-program-macros"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "blake3",
+ "proc-macro-crate 3.5.0",
+ "proc-macro2",
+ "quote",
+ "syn 2.0.117",
+]
+
+[[package]]
+name = "zisk-prover-backend"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "alloy-sol-types",
+ "anyhow",
+ "blake3",
+ "borsh",
+ "colored",
+ "proofman",
+ "proofman-common",
+ "proofman-fields",
+ "proofman-util",
+ "proofman-verifier",
+ "serde",
+ "tracing",
+ "zisk-asm-runner",
+ "zisk-cluster-common",
+ "zisk-common",
+ "zisk-core",
+ "zisk-executor",
+ "zisk-pil",
+ "zisk-precomp-hints",
+ "zisk-program-macros",
+ "zisk-recurser",
+ "zisk-rom-setup",
+ "zisk-setup",
+ "zisk-transpiler-common",
+ "ziskemu",
+]
+
+[[package]]
+name = "zisk-recurser"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "anyhow",
+ "blake3",
+ "pil2-pilout",
+ "pil2-stark-recurser",
+ "pil2-stark-setup",
+ "proofman",
+ "proofman-common",
+ "proofman-fields",
+ "proofman-verifier",
+ "serde",
+ "serde_json",
+ "tera",
+ "thiserror 2.0.18",
+ "tracing",
+ "zisk-verifier",
+]
+
+[[package]]
+name = "zisk-riscv"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "elf",
+ "zisk-asm",
+ "zisk-core",
+ "zisk-definitions",
+]
+
+[[package]]
+name = "zisk-rom-setup"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "anyhow",
+ "blake3",
+ "proofman-common",
+ "proofman-fields",
+ "tracing",
+ "zisk-common",
+ "zisk-core",
+ "zisk-pil",
+ "zisk-sm-rom",
+ "zisk-transpiler-common",
+]
+
+[[package]]
+name = "zisk-sdk"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "bincode 2.0.1",
+ "proofman",
+ "proofman-common",
+ "proofman-fields",
+ "proofman-verifier",
+ "rayon",
+ "serde",
+ "serde_json",
+ "thiserror 2.0.18",
+ "tokio",
+ "tracing",
+ "uuid 1.22.0",
+ "zisk-build",
+ "zisk-common",
+ "zisk-coordinator-api",
+ "zisk-coordinator-client",
+ "zisk-prover-backend",
+ "zisk-recurser",
+ "zisk-rom-setup",
+]
+
+[[package]]
+name = "zisk-setup"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "serde_json",
+]
+
+[[package]]
+name = "zisk-sm-arith"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "pil2-std-lib",
+ "proofman-common",
+ "proofman-fields",
+ "rayon",
+ "tracing",
+ "zisk-common",
+ "zisk-core",
+ "zisk-pil",
+ "zisk-sm-binary",
+ "zisk-sm-frequent-ops",
+]
+
+[[package]]
+name = "zisk-sm-binary"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "pil2-std-lib",
+ "proofman-common",
+ "proofman-fields",
+ "rayon",
+ "static_assertions",
+ "tracing",
+ "zisk-common",
+ "zisk-core",
+ "zisk-pil",
+ "zisk-sm-frequent-ops",
+]
+
+[[package]]
+name = "zisk-sm-frequent-ops"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "clap",
+ "proofman-common",
+ "proofman-fields",
+ "static_assertions",
+ "zisk-core",
+]
+
+[[package]]
+name = "zisk-sm-main"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "pil2-std-lib",
+ "proofman-common",
+ "proofman-fields",
+ "rayon",
+ "thiserror 2.0.18",
+ "tracing",
+ "zisk-common",
+ "zisk-core",
+ "zisk-pil",
+ "zisk-sm-mem-common",
+ "ziskemu",
+]
+
+[[package]]
+name = "zisk-sm-mem"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "env",
+ "pil2-std-lib",
+ "proofman-common",
+ "proofman-fields",
+ "proofman-util",
+ "rayon",
+ "tracing",
+ "zisk-common",
+ "zisk-core",
+ "zisk-pil",
+ "zisk-sm-mem-common",
+]
+
+[[package]]
+name = "zisk-sm-mem-common"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "clap",
+ "proofman-fields",
+ "rayon",
+ "static_assertions",
+ "tracing",
+ "zisk-common",
+ "zisk-core",
+ "zisk-pil",
+]
+
+[[package]]
+name = "zisk-sm-mem-planner"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "proofman-util",
+ "tracing",
+ "zisk-common",
+ "zisk-cuda-build",
+ "zisk-pil",
+ "zisk-sm-mem-common",
+]
+
+[[package]]
+name = "zisk-sm-rom"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "proofman-common",
+ "proofman-fields",
+ "rayon",
+ "thiserror 2.0.18",
+ "tracing",
+ "zisk-asm-runner",
+ "zisk-common",
+ "zisk-core",
+ "zisk-pil",
+ "zisk-sm-mem-common",
+ "zisk-transpiler-common",
+]
+
+[[package]]
 name = "zisk-stream"
-version = "1.3.2-alpha"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "448d882c792a2dda645a0769ca9bcc539b42192a6dd79bf687fb0971f5433dac"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
 dependencies = [
  "libc",
+ "quinn",
+ "rcgen",
+ "rustls 0.23.45",
  "thiserror 2.0.18",
+ "tokio",
  "tracing",
 ]
 
 [[package]]
+name = "zisk-transpiler-common"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "zisk-core",
+ "zisk-riscv",
+ "zisk-transpiler-wasm",
+]
+
+[[package]]
+name = "zisk-transpiler-wasm"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "wasmparser",
+ "zisk-core",
+ "zisk-riscv",
+]
+
+[[package]]
 name = "zisk-verifier"
-version = "1.3.2-alpha"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b82ed5753de5f9201277a60d0fb9459a0fcd4c28fe991cb8e93a951d75269bd6"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
 dependencies = [
  "proofman-fields",
  "proofman-verifier",
@@ -13850,18 +15724,46 @@ dependencies = [
 
 [[package]]
 name = "zisk-zkvm-interface"
-version = "1.3.2-alpha"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ee41fd38bb3b08b74c2bbe14d5062d4863cf7f2e90093a791348032e6630eec4"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
 dependencies = [
  "bindgen 0.72.1",
 ]
 
 [[package]]
+name = "ziskemu"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "clap",
+ "flate2",
+ "memmap2",
+ "num-format",
+ "object",
+ "proofman-fields",
+ "rayon",
+ "regex",
+ "serde_json",
+ "symbolic-demangle",
+ "sysinfo 0.38.4",
+ "time",
+ "vergen-git2",
+ "zisk-asm",
+ "zisk-common",
+ "zisk-core",
+ "zisk-definitions",
+ "zisk-pil",
+ "zisk-riscv",
+ "zisk-sm-arith",
+ "zisk-sm-binary",
+ "zisk-sm-mem-common",
+ "zisk-transpiler-common",
+]
+
+[[package]]
 name = "ziskos"
-version = "1.3.2-alpha"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b33bb1b184e0145e8c2d5233ab2b7c83c0e7d6b3b77cdd957132c772ccc14e1e"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
 dependencies = [
  "anyhow",
  "ark-bn254",
@@ -13894,6 +15796,33 @@ dependencies = [
  "zisk-lib-c",
  "zisk-precomp-helpers",
  "zisk-stream",
+ "zisk-verifier",
+ "zisk-zkvm-interface",
+]
+
+[[package]]
+name = "ziskos-hints"
+version = "1.4.0-alpha"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+dependencies = [
+ "anyhow",
+ "bincode 2.0.1",
+ "cfg-if",
+ "getrandom 0.2.17",
+ "lazy_static",
+ "num-bigint 0.4.6",
+ "num-integer",
+ "num-traits",
+ "paste",
+ "proofman-fields",
+ "rand 0.8.6",
+ "ripemd",
+ "serde",
+ "sha2 0.10.9",
+ "tiny-keccak",
+ "zisk-definitions",
+ "zisk-lib-c",
+ "zisk-precomp-helpers",
  "zisk-verifier",
  "zisk-zkvm-interface",
 ]

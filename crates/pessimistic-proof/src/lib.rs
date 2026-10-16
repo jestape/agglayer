@@ -31,3 +31,4 @@ pub mod core {
 
 pub mod error;
 pub mod sp1;
+pub mod zisk;

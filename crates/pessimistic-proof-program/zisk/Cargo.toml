@@ -1,0 +1,30 @@
+[package]
+name = "pessimistic-proof-program-zisk"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+# Standalone workspace: this crate is excluded from the host workspace and
+# builds with the ZisK zkVM toolchain (`cargo-zisk build`). An explicit
+# [workspace] section prevents Cargo from auto-discovering the parent workspace.
+[workspace]
+
+[dependencies]
+pessimistic-proof-core = { path = "../../pessimistic-proof-core", default-features = false, features = ["zisk"] }
+ziskos = { git = "https://github.com/0xPolygonHermez/zisk.git", branch = "pre-develop-1.4.0-alpha" }
+
+[profile.release]
+panic = "abort"
+lto = "fat"
+codegen-units = 1
+overflow-checks = true
+
+[patch.crates-io]
+# Route keccak-f through the ZisK precompile. The patch calls the
+# `syscall_keccak_f` symbol exported by ziskos, so it does not depend on a
+# ziskos version.
+tiny-keccak = { git = "https://github.com/0xPolygonHermez/zisk-patch-tiny-keccak.git", rev = "fd17747f80444f890994c79af2dfe322ac1849c6" }
+# Route secp256k1 recovery through the ZisK precompiles. Tag
+# `patch-k256-0.13.4-zisk-1.4.0`, pinned by revision: it calls
+# `ecdsa_verify_secp256k1_c`, which ziskos exports again from 1.4.0-alpha.
+k256 = { git = "https://github.com/0xPolygonHermez/zisk-patch-elliptic-curves.git", rev = "c415c7cf7d356b0b66e5a72c2670884cae4e3906" }

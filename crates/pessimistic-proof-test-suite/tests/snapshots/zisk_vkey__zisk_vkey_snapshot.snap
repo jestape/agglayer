@@ -1,0 +1,8 @@
+---
+source: crates/pessimistic-proof-test-suite/tests/zisk_vkey.rs
+expression: message
+---
+# If this test fails, it means the ZisK PP program vk has changed.
+# Like an SP1 PP vkey change, this is a protocol event.
+| ZISK_PP_VK_HASH_MODE | Poseidon1 |
+| ZISK_PP_VK           | b060a7b7d6b9f5ff ca4957c944e16193 7bf9029c23ace09e 760f7bcc05b4bd3f |

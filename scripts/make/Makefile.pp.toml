@@ -49,3 +49,42 @@ args = [
     "-ppessimistic-proof-test-suite",
     "--test=vkey_selector",
 ]
+
+[tasks.pp-zisk-elf-build]
+description = "Compile the ZisK pessimistic proof ELF file and update the cached copy"
+cwd = "crates/pessimistic-proof-program/zisk"
+script = '''
+set -e
+# Remap host paths so that the ELF, and therefore its vk, does not depend on
+# where the repository and the cargo home live on the build machine.
+CARGO_HOME_DIR="${CARGO_HOME:-$HOME/.cargo}"
+REPO_ROOT="$(cd ../../.. && pwd)"
+export RUSTFLAGS="--remap-path-prefix=${CARGO_HOME_DIR}/registry/src=/cargo/registry/src --remap-path-prefix=${CARGO_HOME_DIR}/git/checkouts=/cargo/git/checkouts --remap-path-prefix=${REPO_ROOT}=/agglayer"
+cargo-zisk build --release
+cp target/elf/riscv64ima-zisk-zkvm-elf/release/pessimistic-proof-program-zisk \
+    ../../pessimistic-proof/elf/riscv64ima-zisk-zkvm-elf
+'''
+
+[tasks.pp-zisk-setup]
+description = "Run the ZisK setup for the cached ZisK pessimistic proof ELF"
+command = "cargo-zisk"
+args = ["setup", "-e", "crates/pessimistic-proof/elf/riscv64ima-zisk-zkvm-elf"]
+
+[tasks.pp-zisk-check-vkey-change]
+description = "Check the program vk snapshot of the ZisK pessimistic proof"
+dependencies = ["pp-zisk-setup"]
+command = "cargo"
+env.INSTA_UPDATE = "no"
+# `zisk_vkey` is ignored by default: it needs the ZisK setup run above.
+args = [
+    "test",
+    "-ppessimistic-proof-test-suite",
+    "--test=zisk_vkey",
+    "--",
+    "--include-ignored",
+]
+
+[tasks.pp-zisk-accept-vkey-change]
+description = "Update the program vk snapshot of the ZisK pessimistic proof"
+extend = "pp-zisk-check-vkey-change"
+env.INSTA_UPDATE = "always"
