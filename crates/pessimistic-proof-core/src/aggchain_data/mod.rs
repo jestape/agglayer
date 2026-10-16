@@ -144,3 +144,6 @@ impl AggchainData {
         Ok(target_pp_root_version)
     }
 }
+
+#[cfg(feature = "zisk")]
+pub mod sp1_compressed;

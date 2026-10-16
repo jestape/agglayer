@@ -6,8 +6,17 @@ license.workspace = true
 
 [features]
 default = ["sp1"]
-# zkVM backend that verifies aggchain proofs inside the guest.
+# zkVM backends that verify aggchain proofs inside the guest. A zkVM build
+# enables exactly one of them.
 sp1 = ["dep:sp1-zkvm"]
+zisk = [
+    "dep:slop-algebra",
+    "dep:sp1-hypercube",
+    "dep:sp1-primitives",
+    "dep:sp1-recursion-executor",
+    "dep:sp1-verifier",
+    "dep:ziskos",
+]
 testutils = [
     "agglayer-primitives/testutils",
     "unified-bridge/testutils",
@@ -32,6 +41,13 @@ serde_with = { version = "3" }
 thiserror = "2.0.18"
 rand = { version = "0.9.0", optional = true }
 sp1-zkvm = { workspace = true, features = ["verify"], optional = true }
+# ZisK backend: verifies SP1 compressed aggchain proofs in software.
+slop-algebra = { workspace = true, optional = true }
+sp1-hypercube = { workspace = true, optional = true }
+sp1-primitives = { workspace = true, optional = true }
+sp1-recursion-executor = { workspace = true, optional = true }
+sp1-verifier = { workspace = true, optional = true }
+ziskos = { workspace = true, optional = true }
 
 [dev-dependencies]
 alloy.workspace = true
@@ -44,4 +60,4 @@ semver = "1.0"
 toml.workspace = true
 
 [package.metadata.cargo-udeps.ignore]
-normal = ["sp1-zkvm"]
+normal = ["sp1-zkvm", "ziskos"]

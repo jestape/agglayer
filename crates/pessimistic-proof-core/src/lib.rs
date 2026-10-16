@@ -17,5 +17,7 @@ pub const PESSIMISTIC_PROOF_PROGRAM_SELECTOR: [u8; 4] =
     PESSIMISTIC_PROOF_PROGRAM_VERSION.to_be_bytes();
 
 // A guest without a backend would skip aggchain proof verification.
-#[cfg(all(target_os = "zkvm", not(feature = "sp1")))]
-compile_error!("a zkVM build of pessimistic-proof-core needs the `sp1` feature");
+#[cfg(all(target_os = "zkvm", not(any(feature = "sp1", feature = "zisk"))))]
+compile_error!("a zkVM build of pessimistic-proof-core needs the `sp1` or `zisk` feature");
+#[cfg(all(target_os = "zkvm", feature = "sp1", feature = "zisk"))]
+compile_error!("the `sp1` and `zisk` features are mutually exclusive in a zkVM build");

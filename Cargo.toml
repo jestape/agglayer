@@ -78,7 +78,15 @@ sp1-sdk = { version = "=6.2.2", features = ["blocking"] }
 sp1-sdk-v5 = { package = "sp1-sdk", version = "=5.2.2" }
 sp1-primitives = "=6.2.2"
 sp1-prover = "=6.2.2"
+sp1-recursion-executor = "=6.2.2"
+sp1-verifier = { version = "=6.2.2", features = ["std"] }
+slop-algebra = "=6.2.2"
 sp1-zkvm = { version = "=6.2.2", default-features = false }
+
+# ZisK dependencies
+# Note: Whenever these are updated, also update the ZisK guest program in
+#       crates/pessimistic-proof-program/zisk and rebuild its cached ELF.
+ziskos = "=1.3.2-alpha"
 
 # Core dependencies
 alloy = { version = "1.7.3", features = ["full", "json-rpc"] }

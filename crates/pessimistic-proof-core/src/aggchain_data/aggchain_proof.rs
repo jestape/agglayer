@@ -37,5 +37,19 @@ impl AggchainProof {
                 &_aggchain_proof_public_values.hash(),
             );
         }
+
+        #[cfg(all(target_os = "zkvm", feature = "zisk"))]
+        {
+            // ZisK cannot verify SP1 proofs natively: read the SP1 compressed
+            // proof from the input and verify it in software.
+            // Panic upon invalid proof.
+            let proof = ziskos::io::read::<super::sp1_compressed::Sp1CompressedProof>();
+            super::sp1_compressed::verify(
+                &proof,
+                &self.aggchain_vkey,
+                &_aggchain_proof_public_values.hash(),
+            )
+            .expect("invalid SP1 aggchain proof");
+        }
     }
 }
