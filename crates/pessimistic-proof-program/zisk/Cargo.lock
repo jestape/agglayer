@@ -613,7 +613,7 @@ dependencies = [
  "bitflags 2.13.2",
  "cexpr",
  "clang-sys",
- "itertools 0.10.5",
+ "itertools 0.12.1",
  "log",
  "prettyplease",
  "proc-macro2",
@@ -2628,7 +2628,7 @@ dependencies = [
 [[package]]
 name = "proofman-fields"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/pil2-proofman.git?branch=pre-develop-1.4.0-alpha#6f8ce9fafa3838c17afe281c165629d3ddff0d32"
+source = "git+https://github.com/0xPolygonHermez/pil2-proofman.git?branch=pre-develop-1.4.0-alpha#babea6133a30f760eaa1636d9405583552bfdce0"
 dependencies = [
  "blake3",
  "cfg-if",
@@ -2640,7 +2640,7 @@ dependencies = [
 [[package]]
 name = "proofman-verifier"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/pil2-proofman.git?branch=pre-develop-1.4.0-alpha#6f8ce9fafa3838c17afe281c165629d3ddff0d32"
+source = "git+https://github.com/0xPolygonHermez/pil2-proofman.git?branch=pre-develop-1.4.0-alpha#babea6133a30f760eaa1636d9405583552bfdce0"
 dependencies = [
  "num-traits",
  "proofman-fields",
@@ -3482,8 +3482,7 @@ dependencies = [
 [[package]]
 name = "slop-koala-bear"
 version = "6.2.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0a8cdc74f04d13e738b4628312b16dfec6a2e547bde697c8bdcf556884c6e91f"
+source = "git+https://github.com/jestape/zisk-patch-slop-koala-bear.git?rev=b2a32de49778179df2a5ae2ace00e478d3391841#b2a32de49778179df2a5ae2ace00e478d3391841"
 dependencies = [
  "lazy_static",
  "p3-koala-bear",
@@ -4655,22 +4654,22 @@ dependencies = [
 [[package]]
 name = "zisk-circuit"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#80c443d62df7ce042a1a9f0395927e62ee36248e"
 
 [[package]]
 name = "zisk-definitions"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#80c443d62df7ce042a1a9f0395927e62ee36248e"
 
 [[package]]
 name = "zisk-lib-c"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#80c443d62df7ce042a1a9f0395927e62ee36248e"
 
 [[package]]
 name = "zisk-precomp-helpers"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#80c443d62df7ce042a1a9f0395927e62ee36248e"
 dependencies = [
  "ark-bls12-381",
  "ark-bn254",
@@ -4688,7 +4687,7 @@ dependencies = [
 [[package]]
 name = "zisk-stream"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#80c443d62df7ce042a1a9f0395927e62ee36248e"
 dependencies = [
  "libc",
  "thiserror 2.0.21",
@@ -4698,7 +4697,7 @@ dependencies = [
 [[package]]
 name = "zisk-verifier"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#80c443d62df7ce042a1a9f0395927e62ee36248e"
 dependencies = [
  "proofman-fields",
  "proofman-verifier",
@@ -4707,7 +4706,7 @@ dependencies = [
 [[package]]
 name = "zisk-zkvm-interface"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#80c443d62df7ce042a1a9f0395927e62ee36248e"
 dependencies = [
  "bindgen",
 ]
@@ -4715,7 +4714,7 @@ dependencies = [
 [[package]]
 name = "ziskos"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#80c443d62df7ce042a1a9f0395927e62ee36248e"
 dependencies = [
  "anyhow",
  "ark-bn254",

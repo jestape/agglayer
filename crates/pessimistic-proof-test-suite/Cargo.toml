@@ -55,6 +55,12 @@ zisk-transpiler-common.workspace = true
 ziskemu.workspace = true
 
 [dev-dependencies]
+# SP1's Poseidon2 (unpatched in this workspace) and ZisK's implementation of
+# its precompile, for the zisk_poseidon2 test.
+slop-algebra.workspace = true
+slop-koala-bear.workspace = true
+slop-symmetric.workspace = true
+zisk-precomp-helpers.workspace = true
 insta.workspace = true
 toml.workspace = true
 rstest.workspace = true

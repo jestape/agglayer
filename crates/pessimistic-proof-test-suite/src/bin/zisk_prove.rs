@@ -349,7 +349,7 @@ async fn prove(
     let start = Instant::now();
     let publics = match zisk {
         Zisk::Emulator(client) => {
-            let output = client.execute(program, stdin, None)?;
+            let output = client.execute(program, stdin, None, None)?;
             row.wall_ms = Some(millis(start.elapsed()));
             row.steps = Some(output.get_execution_steps());
             row.cost = output.get_execution_cost();

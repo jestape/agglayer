@@ -7,7 +7,7 @@ const GUEST_MANIFEST: &str = include_str!("../../pessimistic-proof-program/zisk/
 /// The ZisK source both lockfiles must resolve: the branch the manifests
 /// follow, at the commit the cached ELF is built from.
 const ZISK_SOURCE: &str = "git+https://github.com/0xPolygonHermez/zisk.git\
-                           ?branch=pre-develop-1.4.0-alpha#fa82851b";
+                           ?branch=feature%2Fposeidon2-non-native#80c443d";
 
 fn parse(toml: &str) -> toml::Value {
     toml::from_str(toml).unwrap()

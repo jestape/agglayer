@@ -21,9 +21,10 @@ All commands run from the repository root.
 
 The guest and the host crates use ZisK **1.4.0-alpha**,
 which is not released yet:
-the workspace follows the `pre-develop-1.4.0-alpha` branch,
-and both lockfiles pin commit `fa82851b`.
-Use tools built from that same commit.
+the workspace follows the `feature/poseidon2-non-native` branch,
+which adds the KoalaBear Poseidon2 precompile to `pre-develop-1.4.0-alpha`,
+and both lockfiles pin commit `80c443d`, with pil2-proofman at `babea61`.
+Use tools, and a proving key, built from that same commit.
 
 1. Install the ZisK Rust toolchain, which compiles for the `riscv64ima-zisk-zkvm-elf` target:
 
@@ -39,10 +40,10 @@ Use tools built from that same commit.
    into their own directory so they do not replace the released ones:
 
    ```bash
-   cargo install --locked --git https://github.com/0xPolygonHermez/zisk.git --rev fa82851b \
+   cargo install --locked --git https://github.com/0xPolygonHermez/zisk.git --rev 80c443d \
        cargo-zisk ziskemu --root ~/.zisk-1.4.0
    export PATH="$HOME/.zisk-1.4.0/bin:$PATH"
-   cargo-zisk --version   # cargo-zisk 1.4.0-alpha [cpu] (fa82851 ...)
+   cargo-zisk --version   # cargo-zisk 1.4.0-alpha [cpu] (80c443d ...)
    ```
 
 On macOS with only the Command Line Tools installed,
@@ -79,11 +80,26 @@ cp target/elf/riscv64ima-zisk-zkvm-elf/release/pessimistic-proof-program-zisk \
 
 The build is reproducible: rebuilding from the same sources gives the same ELF.
 
-The guest patches two crates with ZisK precompiles, in its own `Cargo.toml` only:
-`tiny-keccak` (keccak-f) and `k256` (secp256k1).
+The guest patches three crates with ZisK precompiles, in its own `Cargo.toml` only:
+`tiny-keccak` (keccak-f), `k256` (secp256k1) and `slop-koala-bear` (KoalaBear Poseidon2).
 The `k256` patch needs ZisK 1.4.0-alpha:
 with ZisK 1.3.2 the guest fails to link with `undefined symbol: ecdsa_verify_secp256k1_c`,
 and the 1.3.2 emulator rejects its unaligned secp256k1 precompile calls.
+
+### Patched crates
+
+Like `tiny-keccak` and `k256`, `slop-koala-bear` comes from a patch repository,
+[`zisk-patch-slop-koala-bear`](https://github.com/jestape/zisk-patch-slop-koala-bear),
+pinned by revision: SP1's crate (6.2.2) with a patch that, inside ZisK,
+runs `KoalaPerm` on the `poseidon2_koalabear` precompile.
+The SP1 verifier's Merkle trees and challenger use `KoalaPerm`;
+its other Poseidon2 calls, such as the vk hash, stay in software.
+
+The `zisk_poseidon2` test checks the precompile against SP1's software permutation,
+and the `zisk_pins` test checks that every patch is in use,
+since Cargo only warns when one stops matching.
+To move to a new SP1 version, reapply the patch on top of that version in the patch repository,
+then update the revision here.
 
 ## 3. Obtain inputs
 
@@ -91,7 +107,10 @@ An input is the guest's stdin, in the order the guest reads it:
 
 1. the `NetworkState` before the certificate,
 2. the `MultiBatchHeader` of the certificate,
-3. the SP1 compressed aggchain proof, only if the certificate carries one.
+3. the SP1 compressed aggchain proof, only if the certificate carries one,
+   as one frame in SP1's fixed-int bincode encoding
+   (`pessimistic_proof::zisk::encode_sp1_compressed_proof`), which the guest decodes faster
+   than the default varint encoding.
 
 The `zisk-inputs` tool writes them as files for `ziskemu -i` and `cargo-zisk -i`.
 Each file is named after its source and saved in `--out-dir` (default `zisk-inputs/`).
@@ -187,7 +206,7 @@ Typical costs, measured with the 1.4.0-alpha emulator:
 | Certificate | Steps | Cost |
 |-------------|-------|------|
 | Legacy ECDSA, 3 bridge exits and 3 imported bridge exits | 0.8M to 1.1M | 0.42B to 0.47B |
-| Multisig and one SP1 aggchain proof | 760M | 93.8B |
+| Multisig and one SP1 aggchain proof | 42.6M to 43.2M | 5.97B to 6.07B |
 
 Software verification of the SP1 aggchain proof dominates the second case.
 

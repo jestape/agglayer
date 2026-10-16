@@ -81,20 +81,25 @@ sp1-prover = "=6.2.2"
 sp1-recursion-executor = "=6.2.2"
 sp1-verifier = { version = "=6.2.2", features = ["std"] }
 slop-algebra = "=6.2.2"
+slop-koala-bear = "=6.2.2"
+slop-symmetric = "=6.2.2"
 sp1-zkvm = { version = "=6.2.2", default-features = false }
 
 # ZisK dependencies
 # Note: Whenever these are updated, also update the ZisK guest program in
 #       crates/pessimistic-proof-program/zisk and rebuild its cached ELF.
 # ZisK 1.4.0-alpha is not released yet: these follow the
-# `pre-develop-1.4.0-alpha` branch, which the k256 patch of the guest needs.
+# `feature/poseidon2-non-native` branch, which adds the KoalaBear Poseidon2
+# precompile the guest uses and builds on `pre-develop-1.4.0-alpha`, which
+# the k256 patch of the guest needs.
 # Cargo.lock and the guest's Cargo.lock must lock the same commit; the zisk_pins
 # test of pessimistic-proof-test-suite checks it.
-zisk-core = { git = "https://github.com/0xPolygonHermez/zisk.git", branch = "pre-develop-1.4.0-alpha" }
-zisk-sdk = { git = "https://github.com/0xPolygonHermez/zisk.git", branch = "pre-develop-1.4.0-alpha" }
-zisk-transpiler-common = { git = "https://github.com/0xPolygonHermez/zisk.git", branch = "pre-develop-1.4.0-alpha" }
-ziskemu = { git = "https://github.com/0xPolygonHermez/zisk.git", branch = "pre-develop-1.4.0-alpha" }
-ziskos = { git = "https://github.com/0xPolygonHermez/zisk.git", branch = "pre-develop-1.4.0-alpha" }
+zisk-core = { git = "https://github.com/0xPolygonHermez/zisk.git", branch = "feature/poseidon2-non-native" }
+zisk-sdk = { git = "https://github.com/0xPolygonHermez/zisk.git", branch = "feature/poseidon2-non-native" }
+zisk-transpiler-common = { git = "https://github.com/0xPolygonHermez/zisk.git", branch = "feature/poseidon2-non-native" }
+ziskemu = { git = "https://github.com/0xPolygonHermez/zisk.git", branch = "feature/poseidon2-non-native" }
+ziskos = { git = "https://github.com/0xPolygonHermez/zisk.git", branch = "feature/poseidon2-non-native" }
+zisk-precomp-helpers = { git = "https://github.com/0xPolygonHermez/zisk.git", branch = "feature/poseidon2-non-native" }
 
 # Core dependencies
 alloy = { version = "1.7.3", features = ["full", "json-rpc"] }
