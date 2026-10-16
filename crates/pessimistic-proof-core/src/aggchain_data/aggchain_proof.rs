@@ -43,7 +43,7 @@ impl AggchainProof {
             // ZisK cannot verify SP1 proofs natively: read the SP1 compressed
             // proof from the input and verify it in software.
             // Panic upon invalid proof.
-            let proof = ziskos::io::read::<super::sp1_compressed::Sp1CompressedProof>();
+            let proof = super::sp1_compressed::read_proof();
             super::sp1_compressed::verify(
                 &proof,
                 &self.aggchain_vkey,

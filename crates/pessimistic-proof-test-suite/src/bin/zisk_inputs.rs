@@ -182,7 +182,9 @@ async fn network(
         input.write(&state);
         input.write(&header);
         for (proof, _) in &stdin.proofs {
-            input.write(proof);
+            input.write_slice(&pessimistic_proof::zisk::encode_sp1_compressed_proof(
+                proof,
+            )?);
         }
         save(out_dir, &id, &input, &state, &header, stdin.proofs.len())?;
     }

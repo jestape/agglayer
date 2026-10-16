@@ -145,5 +145,7 @@ impl AggchainData {
     }
 }
 
+#[cfg(any(feature = "zisk", test))]
+mod fixint;
 #[cfg(feature = "zisk")]
 pub mod sp1_compressed;

@@ -22,6 +22,16 @@ pub const PROGRAM_VK: [u64; 4] = [
     0x760f7bcc05b4bd3f,
 ];
 
+/// Encodes an SP1 compressed aggchain proof as the ZisK program reads it: one
+/// input frame (write it with `ZiskStdin::write_slice`) in SP1's fixed-int
+/// bincode encoding, which the guest decodes in a fraction of the steps of the
+/// varint encoding of `ZiskStdin::write`.
+pub fn encode_sp1_compressed_proof<T: serde::Serialize>(
+    proof: &T,
+) -> agglayer_bincode::Result<Vec<u8>> {
+    agglayer_bincode::sp1_compatible().serialize(proof)
+}
+
 #[derive(Debug, thiserror::Error)]
 pub enum OutputError {
     #[error("failed to decode the pessimistic proof output")]

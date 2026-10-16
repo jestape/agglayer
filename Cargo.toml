@@ -89,14 +89,16 @@ sp1-zkvm = { version = "=6.2.2", default-features = false }
 # Note: Whenever these are updated, also update the ZisK guest program in
 #       crates/pessimistic-proof-program/zisk and rebuild its cached ELF.
 # ZisK 1.4.0-alpha is not released yet: these follow the
-# `pre-develop-1.4.0-alpha` branch, which the k256 patch of the guest needs.
+# `feature/poseidon2-non-native` branch, which adds the KoalaBear Poseidon2
+# precompile the guest uses and builds on `pre-develop-1.4.0-alpha`, which
+# the k256 patch of the guest needs.
 # Cargo.lock and the guest's Cargo.lock must lock the same commit; a test in
 # agglayer-zisk checks it.
-zisk-core = { git = "https://github.com/0xPolygonHermez/zisk.git", branch = "pre-develop-1.4.0-alpha" }
-zisk-sdk = { git = "https://github.com/0xPolygonHermez/zisk.git", branch = "pre-develop-1.4.0-alpha" }
-zisk-transpiler-common = { git = "https://github.com/0xPolygonHermez/zisk.git", branch = "pre-develop-1.4.0-alpha" }
-ziskemu = { git = "https://github.com/0xPolygonHermez/zisk.git", branch = "pre-develop-1.4.0-alpha" }
-ziskos = { git = "https://github.com/0xPolygonHermez/zisk.git", branch = "pre-develop-1.4.0-alpha" }
+zisk-core = { git = "https://github.com/0xPolygonHermez/zisk.git", branch = "feature/poseidon2-non-native" }
+zisk-sdk = { git = "https://github.com/0xPolygonHermez/zisk.git", branch = "feature/poseidon2-non-native" }
+zisk-transpiler-common = { git = "https://github.com/0xPolygonHermez/zisk.git", branch = "feature/poseidon2-non-native" }
+ziskemu = { git = "https://github.com/0xPolygonHermez/zisk.git", branch = "feature/poseidon2-non-native" }
+ziskos = { git = "https://github.com/0xPolygonHermez/zisk.git", branch = "feature/poseidon2-non-native" }
 
 # Core dependencies
 alloy = { version = "1.7.3", features = ["full", "json-rpc"] }

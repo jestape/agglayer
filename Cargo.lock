@@ -14943,7 +14943,7 @@ dependencies = [
 [[package]]
 name = "zisk-asm"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "zisk-core",
 ]
@@ -14951,7 +14951,7 @@ dependencies = [
 [[package]]
 name = "zisk-asm-runner"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "anyhow",
  "libc",
@@ -14970,7 +14970,7 @@ dependencies = [
 [[package]]
 name = "zisk-build"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "anyhow",
  "blake3",
@@ -14987,12 +14987,12 @@ dependencies = [
 [[package]]
 name = "zisk-circuit"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 
 [[package]]
 name = "zisk-cluster-common"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "anyhow",
  "borsh",
@@ -15011,7 +15011,7 @@ dependencies = [
 [[package]]
 name = "zisk-common"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "alloy-sol-types",
  "bincode 2.0.1",
@@ -15040,7 +15040,7 @@ dependencies = [
 [[package]]
 name = "zisk-coordinator-api"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "anyhow",
  "chrono",
@@ -15056,7 +15056,7 @@ dependencies = [
 [[package]]
 name = "zisk-coordinator-client"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "anyhow",
  "bytes",
@@ -15072,7 +15072,7 @@ dependencies = [
 [[package]]
 name = "zisk-core"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "elf",
  "paste",
@@ -15088,17 +15088,17 @@ dependencies = [
 [[package]]
 name = "zisk-cuda-build"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 
 [[package]]
 name = "zisk-definitions"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 
 [[package]]
 name = "zisk-executor"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "anyhow",
  "arc-swap",
@@ -15143,7 +15143,7 @@ dependencies = [
 [[package]]
 name = "zisk-gpu-witness"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "paste",
 ]
@@ -15151,12 +15151,12 @@ dependencies = [
 [[package]]
 name = "zisk-lib-c"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 
 [[package]]
 name = "zisk-pil"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "proofman-common",
  "proofman-fields",
@@ -15168,7 +15168,7 @@ dependencies = [
 [[package]]
 name = "zisk-precomp-arith-eq"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "ark-bn254",
  "ark-ff 0.5.0",
@@ -15198,7 +15198,7 @@ dependencies = [
 [[package]]
 name = "zisk-precomp-arith-eq-384"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "ark-bls12-381",
  "ark-ff 0.5.0",
@@ -15224,7 +15224,7 @@ dependencies = [
 [[package]]
 name = "zisk-precomp-big-int"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "pil2-std-lib",
  "proofman-common",
@@ -15242,7 +15242,7 @@ dependencies = [
 [[package]]
 name = "zisk-precomp-blake2"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "pil2-std-lib",
  "proofman-common",
@@ -15259,7 +15259,7 @@ dependencies = [
 [[package]]
 name = "zisk-precomp-blake3"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "pil2-std-lib",
  "proofman-common",
@@ -15276,7 +15276,7 @@ dependencies = [
 [[package]]
 name = "zisk-precomp-common"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "pil2-std-lib",
  "proofman-fields",
@@ -15290,7 +15290,7 @@ dependencies = [
 [[package]]
 name = "zisk-precomp-dma"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "pil2-std-lib",
  "proofman-common",
@@ -15308,7 +15308,7 @@ dependencies = [
 [[package]]
 name = "zisk-precomp-evm"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "clap",
  "pil2-std-lib",
@@ -15324,7 +15324,7 @@ dependencies = [
 [[package]]
 name = "zisk-precomp-helpers"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "ark-bls12-381",
  "ark-bn254",
@@ -15342,7 +15342,7 @@ dependencies = [
 [[package]]
 name = "zisk-precomp-hints"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "anyhow",
  "borsh",
@@ -15357,7 +15357,7 @@ dependencies = [
 [[package]]
 name = "zisk-precomp-keccakf"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "pil2-std-lib",
  "proofman-common",
@@ -15378,8 +15378,9 @@ dependencies = [
 [[package]]
 name = "zisk-precomp-poseidon"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
+ "paste",
  "pil2-std-lib",
  "proofman-common",
  "proofman-fields",
@@ -15390,12 +15391,13 @@ dependencies = [
  "zisk-core",
  "zisk-pil",
  "zisk-precomp-common",
+ "zisk-precomp-helpers",
 ]
 
 [[package]]
 name = "zisk-precomp-sha256f"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "pil2-std-lib",
  "proofman-common",
@@ -15412,7 +15414,7 @@ dependencies = [
 [[package]]
 name = "zisk-precomp-twisted-edwards"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "ark-bn254",
  "ark-ff 0.5.0",
@@ -15438,7 +15440,7 @@ dependencies = [
 [[package]]
 name = "zisk-program-macros"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "blake3",
  "proc-macro-crate 3.5.0",
@@ -15450,7 +15452,7 @@ dependencies = [
 [[package]]
 name = "zisk-prover-backend"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "alloy-sol-types",
  "anyhow",
@@ -15482,7 +15484,7 @@ dependencies = [
 [[package]]
 name = "zisk-recurser"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "anyhow",
  "blake3",
@@ -15504,7 +15506,7 @@ dependencies = [
 [[package]]
 name = "zisk-riscv"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "elf",
  "zisk-asm",
@@ -15515,7 +15517,7 @@ dependencies = [
 [[package]]
 name = "zisk-rom-setup"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "anyhow",
  "blake3",
@@ -15532,7 +15534,7 @@ dependencies = [
 [[package]]
 name = "zisk-sdk"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "bincode 2.0.1",
  "proofman",
@@ -15558,7 +15560,7 @@ dependencies = [
 [[package]]
 name = "zisk-setup"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "serde_json",
 ]
@@ -15566,7 +15568,7 @@ dependencies = [
 [[package]]
 name = "zisk-sm-arith"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "pil2-std-lib",
  "proofman-common",
@@ -15583,7 +15585,7 @@ dependencies = [
 [[package]]
 name = "zisk-sm-binary"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "pil2-std-lib",
  "proofman-common",
@@ -15600,7 +15602,7 @@ dependencies = [
 [[package]]
 name = "zisk-sm-frequent-ops"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "clap",
  "proofman-common",
@@ -15612,7 +15614,7 @@ dependencies = [
 [[package]]
 name = "zisk-sm-main"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "pil2-std-lib",
  "proofman-common",
@@ -15630,7 +15632,7 @@ dependencies = [
 [[package]]
 name = "zisk-sm-mem"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "env",
  "pil2-std-lib",
@@ -15648,7 +15650,7 @@ dependencies = [
 [[package]]
 name = "zisk-sm-mem-common"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "clap",
  "proofman-fields",
@@ -15663,7 +15665,7 @@ dependencies = [
 [[package]]
 name = "zisk-sm-mem-planner"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "proofman-util",
  "tracing",
@@ -15676,7 +15678,7 @@ dependencies = [
 [[package]]
 name = "zisk-sm-rom"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "proofman-common",
  "proofman-fields",
@@ -15694,7 +15696,7 @@ dependencies = [
 [[package]]
 name = "zisk-stream"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "libc",
  "quinn",
@@ -15708,7 +15710,7 @@ dependencies = [
 [[package]]
 name = "zisk-transpiler-common"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "zisk-core",
  "zisk-riscv",
@@ -15718,7 +15720,7 @@ dependencies = [
 [[package]]
 name = "zisk-transpiler-wasm"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "wasmparser",
  "zisk-core",
@@ -15728,7 +15730,7 @@ dependencies = [
 [[package]]
 name = "zisk-verifier"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "proofman-fields",
  "proofman-verifier",
@@ -15737,7 +15739,7 @@ dependencies = [
 [[package]]
 name = "zisk-zkvm-interface"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "bindgen 0.72.1",
 ]
@@ -15745,7 +15747,7 @@ dependencies = [
 [[package]]
 name = "ziskemu"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "clap",
  "flate2",
@@ -15775,7 +15777,7 @@ dependencies = [
 [[package]]
 name = "ziskos"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "anyhow",
  "ark-bn254",
@@ -15815,7 +15817,7 @@ dependencies = [
 [[package]]
 name = "ziskos-hints"
 version = "1.4.0-alpha"
-source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=pre-develop-1.4.0-alpha#fa82851b8707a6f2560fc96fd8e4f5acc406be1b"
+source = "git+https://github.com/0xPolygonHermez/zisk.git?branch=feature%2Fposeidon2-non-native#7606967877590e9f9784503a3ba0e82537edea83"
 dependencies = [
  "anyhow",
  "bincode 2.0.1",
