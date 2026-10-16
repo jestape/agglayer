@@ -72,3 +72,15 @@ The execution outputs a json file which contains the following:
 ## Proof output
 
 Use `--proof-dir` to save the proof as a JSON file in the specified directory. If not set, the proof will be logged instead.
+
+# ZisK inputs
+
+`zisk-inputs` writes input files for the ZisK pessimistic proof program,
+either from real proof requests on the Succinct prover network or from the sample data.
+See the [ZisK guest README](../../../pessimistic-proof-program/zisk/README.md#3-obtain-inputs).
+
+# ZisK proving
+
+`zisk-prove` proves a directory of those inputs end to end with ZisK,
+checks each proof against the native execution, and reports proving times per input and in summary.
+See the [ZisK guest README](../../../pessimistic-proof-program/zisk/README.md#6-prove-many-inputs).

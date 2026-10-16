@@ -8337,6 +8337,7 @@ dependencies = [
  "agglayer-types",
  "alloy",
  "base64 0.22.1",
+ "bincode 1.3.3",
  "clap",
  "ecdsa-proof-lib",
  "eyre",
@@ -8348,7 +8349,9 @@ dependencies = [
  "prover-executor",
  "rand 0.9.3",
  "regex",
+ "reqwest 0.12.28",
  "rstest",
+ "rustls 0.23.45",
  "serde",
  "serde_json",
  "sp1-core-machine 6.2.2",
@@ -8364,6 +8367,7 @@ dependencies = [
  "zisk-sdk",
  "zisk-transpiler-common",
  "ziskemu",
+ "zstd",
 ]
 
 [[package]]
