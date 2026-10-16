@@ -313,7 +313,13 @@ async fn write_request(out_dir: &Path, request: &ProofRequest, selection: &mut S
     input.write(&state);
     input.write(&header);
     for (proof, _) in &stdin.proofs {
-        input.write(proof);
+        match pessimistic_proof::zisk::encode_sp1_compressed_proof(proof) {
+            Ok(bytes) => input.write_slice(&bytes),
+            Err(error) => {
+                println!("{id}: skipped, {error}");
+                return;
+            }
+        }
     }
     match save(out_dir, &id, &input, &state, &header, stdin.proofs.len()) {
         Ok(()) => selection.add(kind),

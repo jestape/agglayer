@@ -33,6 +33,13 @@ pub enum Sp1CompressedProofError {
     PublicValues,
 }
 
+/// Reads the next SP1 compressed proof from the guest input: one frame in SP1's fixed-int bincode
+/// encoding, as `pessimistic_proof::zisk::encode_sp1_compressed_proof` writes it. It is decoded
+/// with [`super::fixint`], which reads that encoding in fewer steps than bincode.
+pub fn read_proof() -> Sp1CompressedProof {
+    super::fixint::deserialize(&ziskos::io::read_slice()).expect("malformed SP1 compressed proof")
+}
+
 /// Verifies that `proof` is a valid SP1 compressed proof of the program
 /// `vkey`, committing to public values hashing to `public_values_digest`.
 pub fn verify(

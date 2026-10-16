@@ -5,3 +5,6 @@ __fuzz__
 fuzz.log
 docs/knowledge-base/book/
 .DS_Store
+
+# ZisK guest inputs written by the zisk-inputs tool (its default --out-dir).
+zisk-inputs/

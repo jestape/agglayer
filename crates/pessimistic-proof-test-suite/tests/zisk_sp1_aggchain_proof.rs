@@ -136,7 +136,7 @@ fn zisk(fixture: &Fixture, header: &MultiBatchHeader) -> Option<PessimisticProof
         panic!("not a compressed proof")
     };
     let stdin = zisk_stdin(&fixture.state, header);
-    stdin.write(&**proof);
+    stdin.write_slice(&pessimistic_proof::zisk::encode_sp1_compressed_proof(&**proof).unwrap());
     zisk_execute(&stdin)
 }
 
